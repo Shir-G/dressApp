@@ -11,7 +11,7 @@
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
-        echo "$email";
+        //echo "$email";
 
         //to prevent sql injection
         $email = stripcslashes($email);
@@ -19,13 +19,26 @@
         $email = mysql_real_escape_string($email);
         $password = mysql_real_escape_string($password);
 
-        $login=true;
+        $login=true; //flag if login attempt went wrong
+
+        /*function debug_to_console( $data ) {
+            $output = $data;
+            if ( is_array( $output ) )
+                $output = implode( ',', $output);
+
+            echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+        }
+
+         debug_to_console("try");*/
+       
+
+        //get the user info from the DB
         $query = "SELECT * FROM users WHERE email = '$email' ";
         $result = mysql_query($query) or die("failed to login" .mysql_error());
         $row = mysql_fetch_array($result);
 
-        if ($row['email'] == $email) {
-            if (password_verify($password, $row['password'])) {
+        if ($row['email'] == $email) { //if user is found
+            if (password_verify($password, $row['password'])) { //verify if password was entered correctly
                 $msg = "welcome ".$row['username'];
             }
             else {
@@ -38,16 +51,16 @@
             $login=false;
         }
 
-        if ($login) {
+        if ($login) { //if credentials are right
             
             $_SESSION['user_id'] = $row['user_id'];
-            header("Location: homepage.php");
+            // $json[]  = array('name' => $row['username'], 'email' => $row['email'], 'status' => "ok");
+            // echo json_encode($json);
+            header("Location: homepage.php"); //redirect to hompage
         }
         else $msg = "Sorry, those credentials don't match";
         }
-    
 
-    
 ?>
 
 <!DOCTYPE html>

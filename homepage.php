@@ -1,5 +1,6 @@
 <?php
     include 'user_config.php';
+    //echo "!!!".$user['username'];
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +16,12 @@
         <br /><br />You are successfully logged in!
         <br /><br />
         <a href="logout.php">Logout?</a>
+
+        <h2>Search Item</h2>
+        <form action="item.php" method="post">
+            <input type="text" name="item_id" required></input>
+            <input type="submit" name="submit" value="submit"></input>
+        </form>
 
     <?php else: ?>
 

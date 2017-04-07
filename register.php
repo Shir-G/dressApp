@@ -1,26 +1,26 @@
 <?php
     include 'connect.php';
     session_start();
-    if (isset($_SESSION['user_id'])) {
+    if (isset($_SESSION['user_id'])) { //if user is already logged in
         header("Location: homepage.php");
     }
 
-    $msg = '';
+    $msg = ''; //message presented to the user after registration attempt
 
-    if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email'])) {
+    if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['email'])) { //if user filled thest fields
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
         $email = $_POST['email'];
         $permissions = $_POST['account_permissions'];
 
-        if($password==$confirm_password){
-            $password = password_hash($password,PASSWORD_BCRYPT);
+        if($password==$confirm_password){ //if the password 'field' and the 'confirm password' field match
+            $password = password_hash($password,PASSWORD_BCRYPT); //encrypt password before saving it to the DB
             $query = "INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `my_closet`, `liked_outfits`, `account_permissions`) VALUES ('', '$username', '$email', '$password', NULL, NULL, '$permissions')";
             
             $retval = mysql_query( $query, $conn );
             $insertId = mysql_insert_id();              
-            if(! $retval ) {
+            if(! $retval ) { //if qurey execution didnt succeed
                 die('Could not enter data: ' . mysql_error());
                 $msg = 'Sorry there must have been an issue creating your account';
             }
@@ -28,7 +28,7 @@
                 $query = "SELECT * FROM users WHERE email = '$email' ";
                 $result = mysql_query($query) or die("failed to login" .mysql_error());
                 $row = mysql_fetch_array($result);
-                $_SESSION['user_id'] = $row['user_id'];
+                $_SESSION['user_id'] = $row['user_id']; //save user info for the session
                 header("Location: homepage.php");
             }
         }
