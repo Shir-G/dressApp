@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('#addBtn').click(function(event){
         event.preventDefault();
+        var btnValue = $(this).val();
         
         /*var clickBtnValue = $(this).val();
         var ajaxurl = 'item.php',
@@ -13,16 +14,14 @@ $(document).ready(function(){
         $.ajax({
             type : 'POST',
             url: 'item.php',
-            data: {'action': 'follow'},
+            data: {'action': btnValue},
             success: function ( data ,status) {
-                console.log( data );              
+         
             },
             error: function ( xhr, desc, err) {
-                console.log(xhr);
                 console.log("Details: " + desc + "\nError:" + err);
             }
         });
-
-        //disable button
+        $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
     }); 
 });

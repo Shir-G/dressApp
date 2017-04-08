@@ -1,7 +1,7 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "pass2591";
+    $servername = "188.121.44.180";
+    $username = "dressapp";
+    $password = "Dressapp1";
     $dbname = "dressapp";
 
     $conn = mysql_connect($servername, $username, $password);
