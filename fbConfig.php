@@ -57,27 +57,37 @@
         $username = $fbUserData['first_name'];
         $femail = $fbUserData['email'];
 
-        $query = "INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `my_closet`, `liked_outfits`, `account_permissions`) VALUES ('', '$username', '$femail', NULL, NULL, NULL, '$permissions')";
-        $retval = mysql_query( $query, $conn );
-        $insertId = mysql_insert_id();              
-        if(! $retval ) {
-            die('Could not enter data: ' . mysql_error());
-            echo 'Sorry there must have been an issue creating your account';
+        $findUserQuery = "SELECT * FROM users WHERE email = '$femail'";
+        $findUserResult = mysql_query( $findUserQuery, $conn );
+        if (! $findUserResult) {
+            $query = "INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `my_closet`, `liked_outfits`, `account_permissions`) VALUES ('', '$username', '$femail', NULL, NULL, NULL, '$permissions')";
+            $retval = mysql_query( $query, $conn );
+            $insertId = mysql_insert_id();              
+            if(! $retval ) {
+                die('Could not enter data: ' . mysql_error());
+                echo 'Sorry there must have been an issue creating your account';
+            }
+            else {
+                $query = "SELECT * FROM users WHERE email = '$femail' ";
+                $result = mysql_query($query) or die("failed to login" .mysql_error());
+                $row = mysql_fetch_array($result);
+                $_SESSION['user_id'] = $row['user_id'];
+                header("Location: homepage.php");
+            }
         }
         else {
-            $query = "SELECT * FROM users WHERE email = '$femail' ";
-            $result = mysql_query($query) or die("failed to login" .mysql_error());
-            $row = mysql_fetch_array($result);
-            $_SESSION['user_id'] = $row['user_id'];
+            $foundUser = mysql_fetch_array($findUserResult);
+            $_SESSION['user_id'] = $foundUser['user_id'];
             header("Location: homepage.php");
         }
+        
         
         // Get logout url
         $logoutURL = $helper->getLogoutUrl($accessToken, $redirectURL.'logout.php');
         
         // Render facebook profile data
         if(empty($userData)){
-            $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
+            $fbButton = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
         }
         
     }else{
@@ -85,16 +95,16 @@
         $loginURL = $helper->getLoginUrl($redirectURL, $fbPermissions);
         
         // Render facebook login button
-        $output = '<a href="'.htmlspecialchars($loginURL).'"><img src="images/fblogin-btn.png" style="width:200px"></a>';
+        $fbButton = '<a href="'.htmlspecialchars($loginURL).'"><img src="images/fblogin-btn.png" style="width:200px"></a>';
     }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title></title>
 </head>
 <body>
-    <div><?php echo $output; ?></div>
+    
 </body>
-</html>
+</html> -->

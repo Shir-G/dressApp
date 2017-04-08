@@ -3,6 +3,7 @@
     if (isset($_SESSION['user_id'])) {
         header("Location: homepage.php");
     }
+    include "fbConfig.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,7 @@
 <body>
     <a href="login.php">Login</a>
     <a href="register.php">Register</a>
-    <a href="fbConfig.php">Facebook</a>
+    <!-- <a href="fbConfig.php">Facebook</a> -->
+    <div><?php echo $fbButton; ?></div>
 </body>
 </html>
