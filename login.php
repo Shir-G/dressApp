@@ -19,18 +19,7 @@
         $email = mysql_real_escape_string($email);
         $password = mysql_real_escape_string($password);
 
-        $login=true; //flag if login attempt went wrong
-
-        /*function debug_to_console( $data ) {
-            $output = $data;
-            if ( is_array( $output ) )
-                $output = implode( ',', $output);
-
-            echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
-        }
-
-         debug_to_console("try");*/
-       
+        $login = true; //flag if login attempt went wrong
 
         //get the user info from the DB
         $query = "SELECT * FROM users WHERE email = '$email' ";
@@ -54,8 +43,6 @@
         if ($login) { //if credentials are right
             
             $_SESSION['user_id'] = $row['user_id'];
-            // $json[]  = array('name' => $row['username'], 'email' => $row['email'], 'status' => "ok");
-            // echo json_encode($json);
             header("Location: homepage.php"); //redirect to hompage
         }
         else $msg = "Sorry, those credentials don't match";

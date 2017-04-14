@@ -31,7 +31,7 @@
               
     }
 
-    function addToCloset($item_id){
+    /*function addToCloset($item_id){
             $find_closet_query = "SELECT `my_closet` FROM users WHERE `user_id` ='". $user['user_id']."'";
             $closet = mysql_result(mysql_query($find_closet_query),0);
             $items_in_closet = explode(",", $closet);
@@ -48,7 +48,7 @@
                 }
                 $added_to_closet = "true";
             }
-        }
+        }*/
         
 ?>
 

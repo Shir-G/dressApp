@@ -98,13 +98,3 @@
         $fbButton = '<a href="'.htmlspecialchars($loginURL).'"><img src="images/fblogin-btn.png" style="width:200px"></a>';
     }
 ?>
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    
-</body>
-</html> -->

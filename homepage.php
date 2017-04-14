@@ -1,6 +1,5 @@
 <?php
     include 'user_config.php';
-    //echo "!!!".$user['username'];
 ?>
 
 <!DOCTYPE html>

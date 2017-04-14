@@ -1,3 +1,5 @@
+
+/*added to closet alert*/
 .alert-box {
     padding: 15px;
     margin-bottom: 20px;
@@ -7,9 +9,26 @@
     top: 0; 
 }
 
-.success {
+.success { 
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
     display: none;
 }
+/***********************/
+
+/*Outfit Editor*/
+#holder{
+    width: 1000px;
+    height: 600px;
+    border: 1px solid;
+}
+
+.draggable{
+    position:relative;
+    cursor: move;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+/***********************/

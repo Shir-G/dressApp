@@ -1,5 +1,5 @@
 <?php
-if(!session_id()){ //@@@check if this line is unnecessary after connecting this page to the system, its already on index.php
+if(!session_id()){ 
     session_start();
 }
 // Include the autoloader provided in the SDK
