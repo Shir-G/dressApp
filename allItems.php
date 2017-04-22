@@ -41,6 +41,7 @@
 <html>
 <head>
     <title>All Items</title>
+    <link rel="stylesheet" href="includes/style.css">
 </head>
 <body>
 <form action="outfitEditor.php" method="post">
@@ -51,7 +52,7 @@
             <label>
                 <input type="checkbox" name="shirt[]" value="<?= $shirt['item_id'] ?>">
                 <section class="item_section">
-                    <img src="<?= $shirt['image'] ?>" width="100px" >
+                    <img src="<?= $shirt['image'] ?>"  >
                 </section>
             </label>
     <?php
@@ -63,7 +64,7 @@
         foreach ($pants as $pant) {
     ?>
             <label>
-                <input type="checkbox" name="pants" value="<?= $pant['item_id'] ?>">
+                <input type="checkbox" name="pants[]" value="<?= $pant['item_id'] ?>">
                 <section class="item_section">
                     <img src="<?= $pant['image'] ?>" width="100px">
                 </section>
@@ -76,7 +77,7 @@
         foreach ($shoes as $shoe) {
     ?>
             <label>
-                <input type="checkbox" name="shoes" value="<?= $shoe['item_id'] ?>">
+                <input type="checkbox" name="shoes[]" value="<?= $shoe['item_id'] ?>">
                 <section class="item_section">
                     <img src="<?= $shoe['image'] ?>" width="100px">
                 </section>
@@ -89,7 +90,7 @@
         foreach ($accessories as $accessory) {
     ?>
             <label>
-                <input type="checkbox" name="accessories" value="<?= $accessory['item_id'] ?>">
+                <input type="checkbox" name="accessories[]" value="<?= $accessory['item_id'] ?>">
                 <section class="item_section">
                     <img src="<?= $accessory['image'] ?>" width="100px">
                 </section>
@@ -102,7 +103,7 @@
         foreach ($dresses as $dress) {
     ?>
             <label>
-                <input type="checkbox" name="dresses" value="<?= $dress['item_id'] ?>">
+                <input type="checkbox" name="dresses[]" value="<?= $dress['item_id'] ?>">
                 <section class="item_section">
                     <img src="<?= $dress['image'] ?>" width="100px">
                 </section>
@@ -115,7 +116,7 @@
         foreach ($overwear as $overItem) {
     ?>
             <label>
-                <input type="checkbox" name="overwear" value="<?= $overItem['item_id'] ?>">
+                <input type="checkbox" name="overwear[]" value="<?= $overItem['item_id'] ?>">
                 <section class="item_section">
                     <img src="<?= $overItem['image'] ?>" width="100px">
                 </section>
@@ -128,7 +129,7 @@
         foreach ($jumpsuits as $jumpsuit) {
     ?>
             <label>
-                <input type="checkbox" name="jumpsuits" value="<?= $jumpsuit['item_id'] ?>">
+                <input type="checkbox" name="jumpsuits[]" value="<?= $jumpsuit['item_id'] ?>">
                 <section class="item_section">
                     <img src="<?= $jumpsuit['image'] ?>" width="100px">
                 </section>
@@ -136,6 +137,7 @@
     <?php
         }
     ?>
+    <br>
     <input type="submit" name="submit" value="submit"></input>        
 </form>        
 

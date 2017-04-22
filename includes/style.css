@@ -32,3 +32,18 @@
     float: left;
 }
 /***********************/
+
+/*all Items*/
+.item_section{
+    display: inline-block;
+}
+
+.item_section img{
+    width: 100px;
+}
+
+.itemImage{
+    width: 100px;
+}
+
+/***********************/

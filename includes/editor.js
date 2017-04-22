@@ -52,13 +52,12 @@ window.onload = function(){
     var ctx = canvas.getContext('2d');
 
     if (ctx){
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        ctx.rect(0,0,1000,600);
-        var isDragging = false;
-        var delta = new Object();
+        canvas.width = 1000;//window.innerWidth;
+        canvas.height = 600;//window.innerHeight;
+        var rect = canvas.getBoundingClientRect();
+        
 
-        var img1 = document.getElementById("pic1");
+        /*var img1 = document.getElementById("pic1");
         var img2 = document.getElementById("pic2");
         var img3 = document.getElementById("pic4");
 
@@ -66,59 +65,110 @@ window.onload = function(){
             {'x':10, 'y':10, 'src':img1, 'bool':false},
             {'x':200, 'y':10, 'src':img2, 'bool':false},
             {'x':400, 'y':10, 'src':img3, 'bool':false}
-        ];
+        ];*/
+
+        var images = document.getElementsByClassName("itemImage");
+        var imgArray = [];
 
         function redraw(){
-            ctx.beginPath();
+            //ctx.beginPath();
             for (var i = 0; i< imgArray.length; i++) {
-                ctx.drawImage(imgArray[i].src, imgArray[i].x, imgArray[i].y);
+                ctx.drawImage(imgArray[i].src, imgArray[i].x, imgArray[i].y,imgArray[i].width, imgArray[i].height);
+                console.log(imgArray[i].width+" "+imgArray[i].height);
+                
             }
-
         }
 
-        redraw(); //initial draw
+        /*for (var i = 0; i <images.length; i++) {
+            //console.log("-------- "+images[i].src);
+            images[i].addEventListener("dragstart",function(evt){
+                console.log("======"+this.src);
+                var img = document.createElement("img");
+                img.src = this.src;
+                img.style.width = "100px";
+                console.log("src= "+img.style.width);
+                // console.log("imgSize " + bla.width);    
+                evt.dataTransfer.setDragImage(img, img.width/2, img.height/2);
+                console.log("w="+img.width+" h="+img.height);
+            }, false);
+        }*/
+
+        canvas.addEventListener("dragover", function (evt) {
+            evt.preventDefault();
+        }, false);
+
+        canvas.addEventListener("drop", function (evt) {
+            var data = evt.dataTransfer.getData("text");
+            for (var i = 0; i < images.length; i++) {
+                if (images[i].src == data) {
+                    var isInArray = false;
+                    for (var j = 0; j < imgArray.length; j++) {
+                        if (imgArray[j].src.src == data) {
+                            isInArray = true; //if the img is already in canvas turn flag to true
+                        }
+                    }
+                    if (isInArray != true) {
+                        var coord = mousePosition(canvas, evt); //drop on mouse position
+                        var imgSize = images[i].getBoundingClientRect();
+                        imgArray.push({'x':coord.x-imgSize.width/2, 'y':coord.y-imgSize.height/2, 'src':images[i], 'bool':false, 'width':imgSize.width*2, 'height':imgSize.height*2});
+                    }
+                }
+            }
+            redraw();
+        }, false);
+
+        function UnderElement(element,mouse) {
+            var elemPosition = {'top':element.y + element.height , 'left':element.x+ element.width};
+            console.log("my="+mouse.y+" mx="+mouse.x);
+            console.log("top="+element.y+" height="+element.height+" left="+element.x+" width="+element.width);
+
+            return ((mouse.x > element.x && mouse.x < elemPosition.left) && (mouse.y > element.y && mouse.y < elemPosition.top))
+        }
 
         function mousePosition(canvas, evt){
-            var rect = canvas.getBoundingClientRect();
             return {
                 x: Math.round(evt.clientX - rect.left),
                 y: Math.round(evt.clientY - rect.top)
             };
         }
 
+        var delta = new Object();
+        var isDragging = false;
+
         canvas.addEventListener('mousedown', function(evt){
             isDragging = true;
             var mousePos = mousePosition(canvas, evt);
+            console.log("###"+mousePos.x +","+mousePos.y);
             
             for (var i = 0; i< imgArray.length; i++) {
-                ctx.drawImage(imgArray[i].src, imgArray[i].x, imgArray[i].y);
                 //if(ctx.isPointInPath(mousePos.x,mousePos.y)){
+                if (UnderElement(imgArray[i],mousePos)) {
                     console.log("POINT IN PATH");
                     imgArray[i].bool = true;
                     delta.x = imgArray[i].x - mousePos.x;
                     delta.y = imgArray[i].y - mousePos.y;
                     break;
+                }
                 //}
-                //else imgArray[i].bool = false;
+                else {
+                    imgArray[i].bool = false;
+                    console.log("NOT IN PATH");
+                }
             }
             ctx.clearRect(0, 0, canvas.width, canvas.height); 
             redraw();
-            //imgArray[i].bool = false;
-            //console.log("DOWN:   x="+mousePos.x+" y="+mousePos.y);
         }, false);
 
         canvas.addEventListener('mousemove', function(evt){
             if(isDragging){
                 var mousePos = mousePosition(canvas, evt);
                 for (var i = 0; i< imgArray.length; i++) {
-                    //console.log("MOVE:   bool "+i+"= "+imgArray[i].bool)
                     if (imgArray[i].bool) {
                         ctx.clearRect(0, 0, canvas.width, canvas.height); 
                         X = mousePos.x + delta.x;
                         Y = mousePos.y + delta.y;
                         imgArray[i].x = X;
                         imgArray[i].y = Y;
-                        //console.log("MOVE:   x="+imgArray[i].x+" y="+imgArray[i].y);
                         break;
                     }
                 }
