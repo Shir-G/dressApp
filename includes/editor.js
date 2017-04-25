@@ -71,11 +71,8 @@ window.onload = function(){
         var imgArray = [];
 
         function redraw(){
-            //ctx.beginPath();
             for (var i = 0; i< imgArray.length; i++) {
                 ctx.drawImage(imgArray[i].src, imgArray[i].x, imgArray[i].y,imgArray[i].width, imgArray[i].height);
-                console.log(imgArray[i].width+" "+imgArray[i].height);
-                
             }
         }
 
@@ -107,7 +104,7 @@ window.onload = function(){
                             isInArray = true; //if the img is already in canvas turn flag to true
                         }
                     }
-                    if (isInArray != true) {
+                    if (!isInArray) {
                         var coord = mousePosition(canvas, evt); //drop on mouse position
                         var imgSize = images[i].getBoundingClientRect();
                         imgArray.push({'x':coord.x-imgSize.width/2, 'y':coord.y-imgSize.height/2, 'src':images[i], 'bool':false, 'width':imgSize.width*2, 'height':imgSize.height*2});
@@ -119,8 +116,6 @@ window.onload = function(){
 
         function UnderElement(element,mouse) {
             var elemPosition = {'top':element.y + element.height , 'left':element.x+ element.width};
-            console.log("my="+mouse.y+" mx="+mouse.x);
-            console.log("top="+element.y+" height="+element.height+" left="+element.x+" width="+element.width);
 
             return ((mouse.x > element.x && mouse.x < elemPosition.left) && (mouse.y > element.y && mouse.y < elemPosition.top))
         }
@@ -138,10 +133,8 @@ window.onload = function(){
         canvas.addEventListener('mousedown', function(evt){
             isDragging = true;
             var mousePos = mousePosition(canvas, evt);
-            console.log("###"+mousePos.x +","+mousePos.y);
             
             for (var i = 0; i< imgArray.length; i++) {
-                //if(ctx.isPointInPath(mousePos.x,mousePos.y)){
                 if (UnderElement(imgArray[i],mousePos)) {
                     console.log("POINT IN PATH");
                     imgArray[i].bool = true;
@@ -149,7 +142,6 @@ window.onload = function(){
                     delta.y = imgArray[i].y - mousePos.y;
                     break;
                 }
-                //}
                 else {
                     imgArray[i].bool = false;
                     console.log("NOT IN PATH");

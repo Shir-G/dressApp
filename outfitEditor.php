@@ -1,5 +1,8 @@
 <?php
 include 'user_config.php';
+
+//TODO add if user is stylist
+
 $itemArray = array();
 if(!empty($_POST['shirt'])) {
     foreach($_POST['shirt'] as $check) {
@@ -46,15 +49,7 @@ if(!empty($_POST['jumpsuits'])) {
     <title></title>
 </head>
 <body>
-    <!-- <div id="holder">
-        <img id="pic1" class="draggable" src="images/1.png" >
-        <img id="pic2" class="draggable" src="images/2.png">
-        <img id="pic4" class="draggable" src="images/4.png">
-    </div> -->
     <canvas id="holder" >
-<!--         <img id="pic1" class="draggable" src="images/1.png" >
-        <img id="pic2" class="draggable" src="images/2.png">
-        <img id="pic4" class="draggable" src="images/4.png"> -->
     </canvas>
     <section id="selectedItems">
 <?php
