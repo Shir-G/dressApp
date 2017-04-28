@@ -1,52 +1,3 @@
-/*function startDragging(event) {
-    // which object was pressed
-    if (!event) {
-        var event = window.event;
-    }
-    if(event.preventDefault) event.preventDefault();
-
-    // explorer uses srcElement
-    target = event.target ? event.target : event.srcElement;
-
-    if (target.className != 'draggable') return; //=work only on the object that suppose to move
-    
-    offsetX = event.clientX;
-    offsetY = event.clientY;
-
-    // default values
-    if(!target.style.left) target.style.left = '0px';
-    if (!target.style.top) target.style.top = '0px';
-
-    coordX = parseInt(target.style.left);
-    coordY = parseInt(target.style.top);
-    
-    drag = true;
-
-    document.onmousemove = dragDiv;
-    event.preventDefault();
-    return false;  
-}
-
-function dragDiv(event) {
-    if (!drag) return;
-    if (!event) var event = window.event;
-    target = event.target ? event.target : event.srcElement;
-    
-    // move div element
-    target.style.left = coordX + event.clientX - offsetX + 'px';
-    target.style.top = coordY + event.clientY - offsetY + 'px';
-    return false;
-}
-
-function stopDrag() {
-    drag = false;
-}
-
-window.onload = function() {
-    document.onmousedown = startDragging;
-    document.onmouseup = stopDrag;
-}*/
-
 window.onload = function(){
     var canvas = document.getElementById('holder');
     var ctx = canvas.getContext('2d');
@@ -55,40 +6,22 @@ window.onload = function(){
         canvas.width = 1000;//window.innerWidth;
         canvas.height = 600;//window.innerHeight;
         var rect = canvas.getBoundingClientRect();
-        
-
-        /*var img1 = document.getElementById("pic1");
-        var img2 = document.getElementById("pic2");
-        var img3 = document.getElementById("pic4");
-
-        var imgArray = [
-            {'x':10, 'y':10, 'src':img1, 'bool':false},
-            {'x':200, 'y':10, 'src':img2, 'bool':false},
-            {'x':400, 'y':10, 'src':img3, 'bool':false}
-        ];*/
 
         var images = document.getElementsByClassName("itemImage");
         var imgArray = [];
 
         function redraw(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
             for (var i = 0; i< imgArray.length; i++) {
-                ctx.drawImage(imgArray[i].src, imgArray[i].x, imgArray[i].y,imgArray[i].width, imgArray[i].height);
+                imgArray[i].src.style.opacity = 0.2; //fades out images the are alredy dragged
+                ctx.drawImage(imgArray[i].src, imgArray[i].x, imgArray[i].y, imgArray[i].width, imgArray[i].height);
+                if (imgArray[i]==selected) {
+                    ctx.strokeStyle = '#D3D3D3';  // some color/style
+                    ctx.lineWidth = 1;
+                    ctx.strokeRect(imgArray[i].x, imgArray[i].y, imgArray[i].width, imgArray[i].height);
+                }
             }
         }
-
-        /*for (var i = 0; i <images.length; i++) {
-            //console.log("-------- "+images[i].src);
-            images[i].addEventListener("dragstart",function(evt){
-                console.log("======"+this.src);
-                var img = document.createElement("img");
-                img.src = this.src;
-                img.style.width = "100px";
-                console.log("src= "+img.style.width);
-                // console.log("imgSize " + bla.width);    
-                evt.dataTransfer.setDragImage(img, img.width/2, img.height/2);
-                console.log("w="+img.width+" h="+img.height);
-            }, false);
-        }*/
 
         canvas.addEventListener("dragover", function (evt) {
             evt.preventDefault();
@@ -129,6 +62,45 @@ window.onload = function(){
 
         var delta = new Object();
         var isDragging = false;
+        var selected;
+        var lastDownTarget;
+
+/*        function addResizeBorder(item){
+            item.src.classList.add("resize_border");
+            console.log("resize_border= "+item.src.className);
+            for (var i = 0; i < imgArray.length; i++) {
+                if (imgArray[i] != item) {
+                    item.src.classList.remove("resize_border");
+                }
+            }
+            
+
+        }*/
+
+        document.addEventListener('keydown', function(evt){
+            
+            if (selected) {
+                if (lastDownTarget == canvas) {
+                    if (evt.keyCode == 40) { //down arrow key
+                        evt.preventDefault();
+                        console.log("last = "+evt.keyCode);
+                        //var imgSize = selected.getBoundingClientRect();
+                        selected.width -= 10;
+                        selected.height -= 10;
+                        redraw();
+                    }
+                    if (evt.keyCode == 38) { //down arrow key
+                        evt.preventDefault();
+                        console.log("last = "+evt.keyCode);
+                        //var imgSize = selected.getBoundingClientRect();
+                        selected.width += 10;
+                        selected.height += 10;
+                        redraw();
+                    }
+                }
+            }
+        },false);
+
 
         canvas.addEventListener('mousedown', function(evt){
             isDragging = true;
@@ -136,7 +108,10 @@ window.onload = function(){
             
             for (var i = 0; i< imgArray.length; i++) {
                 if (UnderElement(imgArray[i],mousePos)) {
-                    console.log("POINT IN PATH");
+                    selected = imgArray[i];
+                    console.log("selected="+selected.src.src);
+                    lastDownTarget = event.target;
+                    //addResizeBorder(selected);
                     imgArray[i].bool = true;
                     delta.x = imgArray[i].x - mousePos.x;
                     delta.y = imgArray[i].y - mousePos.y;
@@ -144,12 +119,14 @@ window.onload = function(){
                 }
                 else {
                     imgArray[i].bool = false;
-                    console.log("NOT IN PATH");
+                    selected = false;
                 }
             }
             ctx.clearRect(0, 0, canvas.width, canvas.height); 
             redraw();
         }, false);
+
+
 
         canvas.addEventListener('mousemove', function(evt){
             if(isDragging){
@@ -182,9 +159,19 @@ window.onload = function(){
             for (var i = 0; i< imgArray.length; i++) {
                 imgArray[i].bool = false;
             }
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            //ctx.clearRect(0, 0, canvas.width, canvas.height);
             redraw();  
         }, false);
+
+        document.addEventListener('mousedown', function(evt){
+            if (event.clientX > rect.left+rect.width || event.clientY >rect.top+rect.height ) {
+                selected = false;
+            }
+
+            
+            redraw();  
+        }, false);
+
 
     }
 }

@@ -1,4 +1,5 @@
 <?php
+    error_reporting(E_ALL ^ E_DEPRECATED);//discard all deprecated warnings
     $servername = "188.121.44.180";
     $username = "dressapp";
     $password = "Dressapp1";
