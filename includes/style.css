@@ -47,9 +47,15 @@
 }
 
 /***********************/
-
+/* 
 .resize_border{
     //outline: 2px dashed #f44336;
     border: 5px solid;
     cursor: ne-resize;
+} */
+
+/*my closet*/
+.closet_items img{
+    width: 150px;
 }
+/***********************/

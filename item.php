@@ -21,7 +21,7 @@
         $item_image = '';
 
         $query = "SELECT * FROM items WHERE item_id = '$item_id' ";
-        $result = mysql_query($query) or die("failed to login" .mysql_error());
+        $result = mysql_query($query) or die("Query not retrieved:  " .mysql_error());
         $item =  mysql_fetch_array($result);
 
         if ($item['item_id'] == $item_id) {
@@ -30,6 +30,20 @@
         else echo "Item Not Found";
               
     }
+
+/*    else {
+        $itemid = $_GET['itemID'];
+        $query = "SELECT * FROM items WHERE item_id = '$itemid' ";
+        $result = mysql_query($query) or die("Query not retrieved:  " .mysql_error());
+        $item =  mysql_fetch_array($result);
+
+        if ($item['item_id'] == $itemid) {
+            $item_image = $item['image'];
+        }
+        else echo "Item Not Found";
+
+             
+    }*/
 
     /*function addToCloset($item_id){
             $find_closet_query = "SELECT `my_closet` FROM users WHERE `user_id` ='". $user['user_id']."'";

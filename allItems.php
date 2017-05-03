@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="includes/style.css">
 </head>
 <body>
+<a href="logout.php">Logout?</a><br>
+<a href="editProfile.php">Edit your profile details</a>
 <form action="outfitEditor.php" method="post">
         <h2>Shirts</h2> 
     <?php

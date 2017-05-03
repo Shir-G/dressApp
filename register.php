@@ -16,6 +16,7 @@
 
         if($password==$confirm_password){ //if the password 'field' and the 'confirm password' field match
             $password = password_hash($password,PASSWORD_BCRYPT); //encrypt password before saving it to the DB
+
             $query = "INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `my_closet`, `liked_outfits`, `account_permissions`) VALUES ('', '$username', '$email', '$password', NULL, NULL, '$permissions')";
             
             $retval = mysql_query( $query, $conn );
@@ -28,6 +29,16 @@
                 $query = "SELECT * FROM users WHERE email = '$email' ";
                 $result = mysql_query($query) or die("failed to login" .mysql_error());
                 $row = mysql_fetch_array($result);
+
+                if ($row['account_permissions'] == "stylist") {
+                    $create_stylist_query = "INSERT INTO `stylists` (`stylist_id`) VALUES ('".$row['user_id']."')";
+                    $retval = mysql_query( $create_stylist_query, $conn );
+                    if(! $retval ) { //if qurey execution didnt succeed
+                        die('Could not enter data: ' . mysql_error());
+                        $msg = 'Sorry there must have been an issue creating your account';
+                    }
+                }
+
                 $_SESSION['user_id'] = $row['user_id']; //save user info for the session
                 header("Location: homepage.php");
             }

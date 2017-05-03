@@ -1,0 +1,3 @@
+[0501/152620.425:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0501/152620.430:ERROR:exception_snapshot_win.cc(87)] thread ID 9704 not found in process
+[0501/152620.431:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed

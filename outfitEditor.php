@@ -1,7 +1,8 @@
 <?php
 include 'user_config.php';
-
-//TODO add if user is stylist
+if ($user['account_permissions'] != "stylist") {
+    header("Location: hompage.php");
+}
 
 $itemArray = array();
 if(!empty($_POST['shirt'])) {
@@ -49,13 +50,14 @@ if(!empty($_POST['jumpsuits'])) {
     <title></title>
 </head>
 <body>
+<a href="logout.php">Logout?</a>
     <canvas id="holder" >
     </canvas>
     <section id="selectedItems">
 <?php
     foreach ($itemArray as $item) {
         $itemQuery = "SELECT * FROM `items` WHERE item_id = '$item' ";
-        $result = mysql_query($itemQuery) or die("failed to login" .mysql_error());
+        $result = mysql_query($itemQuery) or die("Query not retrieved:  " .mysql_error());
         $itemRow = mysql_fetch_array($result);
 ?>
         <section class="item_section">

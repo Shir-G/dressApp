@@ -13,5 +13,8 @@
         $user = $row;
         }
     }
+    else{
+        header("Location: index.php");
+    }
     
 ?>

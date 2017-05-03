@@ -1,5 +1,8 @@
 <?php
     include 'user_config.php';
+    if ($user['account_permissions'] == "stylist") {
+        header("Location: allItems.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +24,8 @@
             <input type="text" name="item_id" required></input>
             <input type="submit" name="submit" value="submit"></input>
         </form>
+
+        <a href="closet.php">See All Items in My Closet</a>
 
     <?php else: ?>
 
