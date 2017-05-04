@@ -19,7 +19,11 @@
     <h1> Stylist</h1>
     <?php if( !empty($user) ): ?>
         <a href="logout.php">Logout?</a><br>
-        <a href="editProfile.php">Edit your profile details</a>
+        <?php
+            if ($user['user_id'] == $_GET['stylistID']){
+        ?>
+            <a href="editProfile.php?stylistID="<?= $_GET['stylistID']; ?>>Edit your profile details</a>
+        <?php } ?>
         <h3><?php echo "Stylist ID: ".$stylistRow['stylist_id']; ?></h3>
         <h4>Description:</h4>
         <p><?= $stylistRow['description'] ?></p>

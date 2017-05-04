@@ -18,6 +18,7 @@
         <br /><br />You are successfully logged in!
         <br /><br />
         <a href="logout.php">Logout?</a>
+        <a href="stylistSearch.php">Search Stylist</a>
 
         <h2>Search Item</h2>
         <form action="item.php" method="post">

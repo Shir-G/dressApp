@@ -1,24 +1,26 @@
 <?php
     include 'user_config.php';
 
-    if (!empty($_POST['description'])){
-        $desc = $_POST['description'];
-        $update_query = "UPDATE `stylists` SET `description` = '$desc' WHERE `stylist_id` = ".$user['user_id'];
-        $retval = mysql_query( $update_query, $conn );
-        if(! $retval ) { //if qurey execution didnt succeed
-            die('Could not enter data: ' . mysql_error());
+    if ($user['user_id'] == $_GET['stylistID']) {
+        if (!empty($_POST['description'])){
+            $desc = $_POST['description'];
+            $update_query = "UPDATE `stylists` SET `description` = '$desc' WHERE `stylist_id` = ".$user['user_id'];
+            $retval = mysql_query( $update_query, $conn );
+            if(! $retval ) { //if qurey execution didnt succeed
+                die('Could not enter data: ' . mysql_error());
+            }
+            else header("Location: stylist.php?stylistID=".$user['user_id']);
         }
-        else header("Location: stylist.php?stylistID=".$user['user_id']);
-    }
 
-    if (!empty($_POST['profileImage'])){
-        $pic = $_POST['profileImage'];
-        $update_query = "UPDATE `stylists` SET `profile_image` = '$pic'  WHERE `stylist_id` = ".$user['user_id'];
-        $retval = mysql_query( $update_query, $conn );
-        if(! $retval ) { //if qurey execution didnt succeed
-            die('Could not enter data: ' . mysql_error());
+        if (!empty($_POST['profileImage'])){
+            $pic = $_POST['profileImage'];
+            $update_query = "UPDATE `stylists` SET `profile_image` = '$pic'  WHERE `stylist_id` = ".$user['user_id'];
+            $retval = mysql_query( $update_query, $conn );
+            if(! $retval ) { //if qurey execution didnt succeed
+                die('Could not enter data: ' . mysql_error());
+            }
+            else header("Location: stylist.php?stylistID=".$user['user_id']);
         }
-        else header("Location: stylist.php?stylistID=".$user['user_id']);
     }
 
 

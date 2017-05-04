@@ -28,7 +28,8 @@
 </head>
 <body>
     <h1> My Closet</h1>
-    <a href="logout.php">Logout?</a>
+    <a href="logout.php">Logout?</a><br>
+    <a href="homepage.php">Homepage</a>
 
     <?php 
         foreach ($myCloset as $singleItem) {
