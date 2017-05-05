@@ -12,11 +12,11 @@ window.onload = function(){
         // var imgArray = [];
 
         function redraw(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (var i = 0; i< imgArray.length; i++) {
-        imgArray[i].src.style.opacity = 0.2; //fades out images the are alredy dragged
+                imgArray[i].src.style.opacity = 0.2; //fades out images the are alredy dragged
                 ctx.drawImage(imgArray[i].src, imgArray[i].x, imgArray[i].y,imgArray[i].width, imgArray[i].height);
-        if (imgArray[i]==selected) {
+                if (imgArray[i]==selected) {
                     ctx.strokeStyle = '#D3D3D3';  // some color/style
                     ctx.lineWidth = 1;
                     ctx.strokeRect(imgArray[i].x, imgArray[i].y, imgArray[i].width, imgArray[i].height);
@@ -28,8 +28,17 @@ window.onload = function(){
             evt.preventDefault();
         }, false);
 
+        var items = document.getElementsByClassName("itemImage");
+        for (var i = 0; i < items.length ; i++) {
+            items[i].addEventListener("dragstart", function(e) {
+                var itemId = this.className.split("item-id-")[1];
+                e.dataTransfer.setData("itemId", itemId); 
+            });
+        }
+
         canvas.addEventListener("drop", function (evt) {
             var data = evt.dataTransfer.getData("text");
+            var itemId = evt.dataTransfer.getData("itemId");
             for (var i = 0; i < images.length; i++) {
                 if (images[i].src == data) {
                     var isInArray = false;
@@ -41,7 +50,7 @@ window.onload = function(){
                     if (!isInArray) {
                         var coord = mousePosition(canvas, evt); //drop on mouse position
                         var imgSize = images[i].getBoundingClientRect();
-                        imgArray.push({'x':coord.x-imgSize.width/2, 'y':coord.y-imgSize.height/2, 'src':images[i], 'bool':false, 'width':imgSize.width*2, 'height':imgSize.height*2, 'imgSrc':images[i].src});
+                        imgArray.push({'x':coord.x-imgSize.width/2, 'y':coord.y-imgSize.height/2, 'src':images[i], 'bool':false, 'width':imgSize.width*2, 'height':imgSize.height*2, 'imgSrc':images[i].src, 'id':itemId});
                     }
                 }
             }
@@ -63,10 +72,10 @@ window.onload = function(){
 
         var delta = new Object();
         var isDragging = false;
-    var selected;
+        var selected;
         var lastDownTarget;
 
-/*        function addResizeBorder(item){
+        /*function addResizeBorder(item){
             item.src.classList.add("resize_border");
             console.log("resize_border= "+item.src.className);
             for (var i = 0; i < imgArray.length; i++) {
@@ -74,8 +83,6 @@ window.onload = function(){
                     item.src.classList.remove("resize_border");
                 }
             }
-            
-
         }*/
 
         document.addEventListener('keydown', function(evt){
@@ -161,11 +168,10 @@ window.onload = function(){
             redraw();  
         }, false);
     
-    document.addEventListener('mousedown', function(evt){
+        document.addEventListener('mousedown', function(evt){
             if (event.clientX > rect.left+rect.width || event.clientY >rect.top+rect.height ) {
                 selected = false;
             }
-
             
             redraw();  
         }, false);
@@ -189,7 +195,6 @@ window.onload = function(){
             */
         });
 
-        // document.getElementById('makeCanvas').addEventListener('click', function(event) {
         document.getElementById('canvasForm').addEventListener('submit', function(e) {         
             
             e.preventDefault();

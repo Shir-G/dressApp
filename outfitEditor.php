@@ -5,19 +5,20 @@ include 'connect.php';
 if (isset($_POST['outfits']) && isset($_POST['category'])) {
     $info = json_decode($_POST['outfits']);
     $category = $_POST['category'];
-    echo $category;
 
     $src = array();
     $x = array();
     $y = array();
     $height = array();
     $width = array();
+    $itemId = array();
     foreach ($info as $outfit) {
         array_push($src, $outfit->{'imgSrc'});
         array_push($x, $outfit->{'x'});
         array_push($y, $outfit->{'y'});
         array_push($height, $outfit->{'height'});
-        array_push($width, $outfit->{'width'});            
+        array_push($width, $outfit->{'width'});  
+        array_push($itemId, $outfit->{'id'});            
     }
 
     $src = implode(",",$src);
@@ -25,7 +26,8 @@ if (isset($_POST['outfits']) && isset($_POST['category'])) {
     $y = implode(",",$y);
     $height = implode(",",$height);
     $width = implode(",",$width);
-    $add_outfit_query = "INSERT INTO `outfits` (`src`, `x`, `y`, `height`, `width`, `category`, `items`) VALUES ('$src', '$x', '$y', '$height', '$width', '$category', 123)";
+    $itemId = implode(",",$itemId);
+    $add_outfit_query = "INSERT INTO `outfits` (`src`, `x`, `y`, `height`, `width`, `category`, `items`) VALUES ('$src', '$x', '$y', '$height', '$width', '$category', '$itemId')";
         
     $retval = mysql_query( $add_outfit_query, $conn );       
     if(! $retval ) { //if qurey execution didnt succeed
@@ -63,7 +65,7 @@ foreach ($_POST['items'] as $check) {
         $itemRow = mysql_fetch_array($result);
 ?>
         <section class="item_section">
-            <img src="<?= $itemRow['image'] ?>"  class="itemImage" draggable="true" ">
+            <img src="<?= $itemRow['image'] ?>"  class="itemImage item-id-<?= $itemRow['item_id'] ?>" draggable="true" ">
         </section>
 <?php
     }
