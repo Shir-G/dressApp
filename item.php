@@ -93,7 +93,7 @@
             <button id="addBtn" type="submit" name='submit' value="<?= $_POST['item_id'] ?>">Add to My Closet</button>
         </form>
         <form action="matchingOutfits.php" method="post">
-            <button id="serchBtn" type="submit" name='outfit' value="<?= $_POST['item_id'] ?>">Find a Matching Outfit</button>
+            <button id="searchBtn" type="submit" name='outfit' value="<?= $_POST['item_id'] ?>">Find a Matching Outfit</button>
         </form>
         
         <!-- add remove icon after clicking -->

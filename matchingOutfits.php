@@ -33,7 +33,9 @@
 
     <?php 
     foreach ($outfitsArr as $outfit) {
-        
+    ?>
+        <img src="<?= $outfit['img']; ?>">
+    <?php    
     }
     ?>
 

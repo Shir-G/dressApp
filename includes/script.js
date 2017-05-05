@@ -24,4 +24,22 @@ $(document).ready(function(){
         });
         $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
     }); 
+
+    $('followBtn').click(function(event){
+        event.preventDefault();
+        var btnValue = $(this).val();
+
+        $.ajax({
+            type : 'POST',
+            url: 'stylist.php',
+            data: {'follow': btnValue},
+            success: function ( data ,status) {
+         
+            },
+            error: function ( xhr, desc, err) {
+                console.log("Details: " + desc + "\nError:" + err);
+            }
+        });
+        $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+    });
 });
