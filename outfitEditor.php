@@ -1,6 +1,5 @@
 <?php
 include 'user_config.php';
-include 'connect.php';
 
 if (isset($_POST['outfits']) && isset($_POST['category'])) {
     $info = json_decode($_POST['outfits']);

@@ -25,19 +25,26 @@
 <html>
 <head>
     <title>Matching Outfits</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="includes/script.js"></script>
 </head>
 <body>
     <h1>Matching outfits</h1>
     <a href="logout.php">Logout?</a><br>
     <a href="homepage.php">Homepage</a><br>
 
+    <form id="outfitForm" method="post" action="outfit.php">
     <?php 
-    foreach ($outfitsArr as $outfit) {
+        foreach ($outfitsArr as $outfit) {
     ?>
-        <img src="<?= $outfit['img']; ?>">
+        <a class="outfit" href=""><img width=300 src="<?= $outfit['img']; ?>"></a>
+        <input type="hidden" name="outfit" value="<?= $outfit['id']; ?>">
     <?php    
-    }
-    ?>
+        }
+    ?>   
+
+    </form>
+    
 
 </body>
 </html>

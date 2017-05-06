@@ -23,6 +23,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="includes/closet.js"></script>
     <link rel="stylesheet" href="includes/style.css">  
     <title>My Closet</title>
 </head>
@@ -31,19 +33,20 @@
     <a href="logout.php">Logout?</a><br>
     <a href="homepage.php">Homepage</a>
 
-    <?php 
+    <form id="itemForm" action="item.php" method="post">
+<?php
         foreach ($myCloset as $singleItem) {
-    ?>
-        
-        <section class="closet_items">
-            <!-- <a href="<?= "item.php?itemID=".$singleItem."" ?>"> -->
-                <img src="<?= $singleItem['image'] ?>">
-            <!-- </a> -->
-        </section>
-        
-    <?php
+?>
+            <section class="closet_items">
+                <a class="item" id="item-id-<?= $singleItem['item_id'] ?>" href="">
+                    <img src="<?= $singleItem['image'] ?>">
+                </a>
+            </section>       
+<?php
         }
-    ?>
+?>
+        <input type="hidden" id="itemInput" name="item_id">
+    </form>
     
 </body>
 </html>
