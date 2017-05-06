@@ -61,4 +61,10 @@ $(document).ready(function(){
             }
         });
     });
+
+    //for matchingOutfit page
+    $('.outfit').click(function(event) {
+        event.preventDefault();
+        $('#outfitForm').submit();
+    });
 });
