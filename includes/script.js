@@ -16,16 +16,16 @@ $(document).ready(function(){
             url: 'item.php',
             data: {'action': btnValue},
             success: function ( data ,status) {
-         
+                $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
             },
             error: function ( xhr, desc, err) {
                 console.log("Details: " + desc + "\nError:" + err);
             }
         });
-        $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+        
     }); 
 
-    $('followBtn').click(function(event){
+    $('#followBtn').click(function(event){
         event.preventDefault();
         var btnValue = $(this).val();
 
@@ -34,12 +34,31 @@ $(document).ready(function(){
             url: 'stylist.php',
             data: {'follow': btnValue},
             success: function ( data ,status) {
-         
+                $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
             },
             error: function ( xhr, desc, err) {
                 console.log("Details: " + desc + "\nError:" + err);
             }
         });
-        $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+        
+    });
+
+    $('.loadBtn').click(function(event){
+        event.preventDefault();
+        var btnValue = $(this).val();
+        var id = $(this).attr('id');
+
+        $.ajax({
+            type : 'POST',
+            url: 'loadOutfits.php',
+            data: {'limit': btnValue},
+            success: function (data) {
+                $(".loadBtn").val(Number(btnValue)+6);
+                $('#items').append(data);
+            },
+            error: function ( xhr, desc, err) {
+                console.log("Details: " + desc + "\nError:" + err);
+            }
+        });
     });
 });

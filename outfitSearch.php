@@ -2,20 +2,33 @@
     include 'user_config.php'; 
 
     $category = "";
+    $isSearching = false;
 
-    if(isset($_POST['category'])){
+    if(isset($_POST['category']) && !empty($_POST['category'])){
+        $isSearching = true;
         $category = $_POST["category"];
+        $search_query= mysql_query("SELECT * FROM outfits WHERE category = '$category'");
+        if(mysql_num_rows($search_query) != 0){
+            $search_rs = mysql_fetch_assoc($search_query);
+        }
     } 
-
-    $search_query= mysql_query("SELECT * FROM outfits WHERE category = '$category'");
-    if(mysql_num_rows($search_query) != 0){
-        $search_rs = mysql_fetch_assoc($search_query);
+    if (isset($_POST['clear'])) {
+        $isSearching = false;
     }
+
+    $load_query = "SELECT * FROM `outfits` ORDER BY `outfits`.`id` DESC LIMIT 6";//select the latest outfits uploaded
+    $res = mysql_query($load_query);
+
+    $limit = 6; //number of items to reload each time
+
+    
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Outfit Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="includes/script.js"></script>
 </head>
 <body>
     <h1>Outfit Search</h1>
@@ -26,9 +39,15 @@
             <input type="text" name="category" id="searchInputField" placeholder="Search a Category" value="<?php echo $category; ?>">
             <button href="#" id="outfitSearchBtn">Search</button>
         </form>
+        <form method="post" action="outfitSearch.php">
+           <button id="clearSearch" name="clear">X</button> 
+        </form>
+        
     </section>
     <section>
+
         <?php 
+        if ($isSearching) {
             if(mysql_num_rows($search_query)!=0){
                 do {
         ?>
@@ -43,7 +62,23 @@
             else{
                 echo "No Results Found";
             }
-            //mysql_free_result($result);   
+            //mysql_free_result($result);
+        }
+        else {
+            while ($load = mysql_fetch_assoc($res)) {
+                echo $load['id']."<br>";
+            }
+        ?>
+            <!-- <img src="<?= $load['img'] ?>"> -->
+        <div  id="items"></div>
+        
+        <!-- <form method="post"> -->
+            <button class="loadBtn" type="submit" name='load' value=<?= $limit ?>>Load More</button>
+        <!-- </form> -->
+
+        
+        <?php
+        }   
         ?>
         
     </section>
