@@ -72,9 +72,7 @@
             <!-- <img src="<?= $load['img'] ?>"> -->
         <div  id="items"></div>
         
-        <!-- <form method="post"> -->
-            <button class="loadBtn" type="submit" name='load' value=<?= $limit ?>>Load More</button>
-        <!-- </form> -->
+        <button class="loadBtn" type="submit" name='load' value=<?= $limit ?>>Load More</button>
 
         
         <?php

@@ -1,8 +1,5 @@
 <?php
     include 'user_config.php';
-    if ($user['account_permissions'] == "stylist") {
-        header("Location: allItems.php");
-    }
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +14,16 @@
         <br />Welcome <?= $user['username']; ?> 
         <br /><br />You are successfully logged in!
         <br /><br />
-        <a href="logout.php">Logout?</a>
+        <a href="logout.php">Logout?</a><br>
         <a href="stylistSearch.php">Search Stylist</a>
+        <a href="outfitSearch.php">Search outfit</a>
+        <?php 
+        if ($user['account_permissions'] == "stylist") {
+        ?>
+            <a href="allItems.php">Create an Outfit</a>
+        <?php
+        }
+        ?>
 
         <h2>Search Item</h2>
         <form action="item.php" method="post">

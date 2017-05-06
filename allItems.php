@@ -15,6 +15,7 @@
 </head>
 <body>
 <a href="logout.php">Logout?</a><br>
+<a href="homepage.php">Homepage</a><br>
 <?php 
     if ($user['account_permissions'] == "stylist"){
 ?>
