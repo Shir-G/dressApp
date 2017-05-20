@@ -62,9 +62,18 @@ $(document).ready(function(){
         });
     });
 
-    //for matchingOutfit page
+    //for matchingOutfit page and also for likedOutfits page
     $('.outfit').click(function(event) {
         event.preventDefault();
+        var outfitId = $(this).attr('id').split("outfit-id-")[1];
+        $('#outfitInput').val(outfitId);
         $('#outfitForm').submit();
     });
+
 });
+
+var clickFunc = function(id) {
+    event.preventDefault();
+    $('#outfitInput').val(id);
+    $('#outfitForm').submit();
+}

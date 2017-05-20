@@ -225,9 +225,6 @@ var sumbitFunc = null;
 
 $(document).ready(function() {
     sumbitFunc = function (dodo, cat) {
-
-        console.log("cat " + cat );
-
         $.ajax({
             type : 'POST',
             url: 'outfitEditor.php',

@@ -54,6 +54,7 @@ foreach ($_POST['items'] as $check) {
 </head>
 <body id="bd">
     <a href="logout.php">Logout?</a><br>
+    <a href="homepage.php">HOMEPAGE</a><br>
     <canvas id="holder" >
     </canvas>
     <section id="selectedItems">

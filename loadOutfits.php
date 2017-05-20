@@ -16,7 +16,9 @@
         }
 
         while ($loadMore = mysql_fetch_assoc($res)) {
-            echo $loadMore['id']."<br>";
+            // echo $loadMore['id']."<br>";
+            echo '<a class="outfit" id="outfit-id-' .$loadMore["id"] .'" href=""><img width=300 src='.$loadMore["img"] .' onclick="clickFunc('. $loadMore["id"] .')"></a>';
+            
         }
     }
  ?>

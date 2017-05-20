@@ -60,8 +60,7 @@ var createCanvas = function(outfit, items){
                         if (item.image == imgArray[i].imgSrc) {
                             for (key in item) {
                                 if (isNaN(key)) {
-                                    console.log(key + " --> " + item[key]);
-                                    if (key == "item_id" || key == "image") continue;
+                                    if (key == "item_id" || key == "image" || key == "qr_code") continue;
                                     if (key == "item_type") html += "<a class='item' id='item-id-" + item.item_id + "' href='' onclick='clickFunc(" + item.item_id + ")'><strong>" + item.item_type + "</strong></a><br>";
                                     else html += key + " = " + item[key] + "<br>";
                                 }
@@ -91,4 +90,66 @@ $(document).ready(function(){
         $('#itemInput').val(itemId);
         $('#itemForm').submit();
     });
+
+    $('#likeOutfit').click(function(event) {       
+        var id = $(this).val();
+        likeOutfitFunc(id);
+    });
+
+    $('#dislikeOutfit').click(function(event) {
+        var id = $(this).val();
+        dislikeOutfitFunc(id);
+    });
+
 });
+
+var dislikeOutfitFunc = function(id) {
+    event.preventDefault();
+    
+    $.ajax({
+            type : 'POST',
+            url: 'outfit.php',
+            data: {'dislikedOutfit': id},
+        
+            success: function (data) {
+                var likeBtn = document.createElement("button");
+                likeBtn.id = "likeOutfit";
+                likeBtn.value = id;
+                likeBtn.innerHTML = "Like Outfit";
+                likeBtn.setAttribute("onClick", "likeOutfitFunc("+id+");");
+
+                var elem = document.getElementById('dislikeOutfit');
+                elem.parentNode.replaceChild(likeBtn, elem);
+
+                // $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+            },
+            error: function ( xhr, desc, err) {
+                console.log("Details: " + desc + "\nError:" + err);
+            }
+        });
+}
+
+var likeOutfitFunc = function(id) {
+    event.preventDefault();
+    
+    $.ajax({
+        type : 'POST',
+        url: 'outfit.php',
+        data: {'likedOutfit': id},
+        success: function (data) {
+            var dislikeBtn = document.createElement("button");
+            dislikeBtn.id = "dislikeOutfit";
+            dislikeBtn.value = id;
+            dislikeBtn.innerHTML = "Dislike Outfit";
+            dislikeBtn.setAttribute("onClick", "dislikeOutfitFunc("+id+");");
+
+            var elem = document.getElementById('likeOutfit');
+            elem.parentNode.replaceChild(dislikeBtn, elem);
+
+            $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+        },
+        error: function ( xhr, desc, err) {
+            console.log("Details: " + desc + "\nError:" + err);
+        }
+    });
+}

@@ -16,7 +16,8 @@
         <br /><br />
         <a href="logout.php">Logout?</a><br>
         <a href="stylistSearch.php">Search Stylist</a>
-        <a href="outfitSearch.php">Search outfit</a>
+        <a href="outfitSearch.php">Search Outfit</a>
+        <a href="likedOutfits.php">Liked Outfits</a>
         <?php 
         if ($user['account_permissions'] == "stylist") {
         ?>

@@ -1,10 +1,17 @@
 <?php
     include 'user_config.php';
 
+    $fetch_item_query = " SELECT `my_closet` FROM users WHERE `user_id` ='". $user['user_id']."'";
+    $result = mysql_result(mysql_query($fetch_item_query) ,0);
+
     if (isset($_POST['action'])) {
         $userid = $user['user_id'];
         $itemid = $_POST['action'];
-        $add_closet_query = "UPDATE `users` SET `my_closet` = CONCAT_WS(',', my_closet, '$itemid') WHERE `user_id` ='". $user['user_id']."'";// the id field generated automatically
+        
+        $fetch_item_query = " SELECT `my_closet` FROM users WHERE `user_id` ='". $user['user_id']."'";
+        $result = mysql_result(mysql_query($fetch_item_query) ,0);
+        if (strcmp($result,"") == 0) $add_closet_query = "UPDATE `users` SET `my_closet` = '$itemid' WHERE `user_id` ='". $user['user_id']."'";
+        else $add_closet_query = "UPDATE `users` SET `my_closet` = CONCAT_WS(',', my_closet, '$itemid') WHERE `user_id` ='". $user['user_id']."'";
             
         $retval = mysql_query( $add_closet_query, $conn );
         $insertId = mysql_insert_id();
@@ -74,7 +81,7 @@
     <link rel="stylesheet" href="includes/style.css">
 </head>
 <body>
-    <div class="alert-box success">Item was added successfully to you closet!</div>
+    <div class="alert-box success">Item was added successfully to your closet!</div>
     <a href="homepage.php">HOMEPAGE</a>
     <h1> Item Page</h1>
     <?php if( !empty($user) ): ?>

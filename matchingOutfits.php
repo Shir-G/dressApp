@@ -37,12 +37,11 @@
     <?php 
         foreach ($outfitsArr as $outfit) {
     ?>
-        <a class="outfit" href=""><img width=300 src="<?= $outfit['img']; ?>"></a>
-        <input type="hidden" name="outfit" value="<?= $outfit['id']; ?>">
+        <a class="outfit" id="outfit-id-<?= $outfit['id'] ?>" href=""><img width=300 src="<?= $outfit['img']; ?>"></a>
     <?php    
         }
-    ?>   
-
+    ?>  
+        <input type="hidden" id="outfitInput" name="outfit">
     </form>
     
 
