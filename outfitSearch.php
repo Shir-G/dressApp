@@ -20,7 +20,6 @@
     $res = mysql_query($load_query);
 
     $limit = 6; //number of items to reload each time
-
     
 ?>
 <!DOCTYPE html>
@@ -39,24 +38,25 @@
             <input type="text" name="category" id="searchInputField" placeholder="Search a Category" value="<?php echo $category; ?>">
             <button href="#" id="outfitSearchBtn">Search</button>
         </form>
-        <?php if ($isSearching) { 
-        ?>
+<?php 
+        if ($isSearching) {
+?>
         <form method="post" action="outfitSearch.php">
            <button id="clearSearch" name="clear">X</button> 
         </form>
-        <?php } ?>
+<?php
+        }
+?>        
     </section>
     <section>
-
+        <form id="outfitForm" method="post" action="outfit.php">
         <?php 
         if ($isSearching) {
             if(mysql_num_rows($search_query)!=0){
                 do {
         ?>
-                    <section>
-                        <p><?php echo $search_rs['id']; ?></p>
-                        <img src="<?= $search_rs['src']?>">
-                    </section>
+                  <a class="outfit" id="outfit-id-<?= $search_rs['id'] ?>" href=""><img width=300 src="<?= $search_rs['img']; ?>"></a>
+                    
         <?php   
                 } while ($search_rs=mysql_fetch_assoc($search_query));
                 //mysql_free_result($search_rs);    
@@ -68,19 +68,22 @@
         }
         else {
             while ($load = mysql_fetch_assoc($res)) {
-                echo $load['id']."<br>";
+                // echo $load['id']."<br>";
+                ?>
+                <a class="outfit" id="outfit-id-<?= $load['id'] ?>" href=""><img width=300 src="<?= $load['img']; ?>"></a>
+                <?php
             }
         ?>
             <!-- <img src="<?= $load['img'] ?>"> -->
         <div  id="items"></div>
-        
+
         <button class="loadBtn" type="submit" name='load' value=<?= $limit ?>>Load More</button>
 
-        
         <?php
         }   
         ?>
-        
+        <input type="hidden" id="outfitInput" name="outfit">
+        </form>
     </section>
 </body>
 </html>
