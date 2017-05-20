@@ -1,6 +1,20 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import MySQLdb
+import sys
+
+try:
+    db = MySQLdb.connect(
+        host = '188.121.44.180',
+        user = 'dressapp',
+        passwd = 'Dressapp1',
+        db = 'dressapp'
+        )
+except Exception as e:
+    sys.exit('cant get into database')
+
+cursor = db.cursor()
 
 
 def getProducts(url):
@@ -23,38 +37,27 @@ def getProducts(url):
 					src = src[:index-1] + "1" + src[index:]
 					src = src[:index-3] + "1" + src[index-2:]
 					src = src[:index-5] + "1" + src[index-4:]
+					index = src.index("_1_1_1")
+					qr = src[(index-10):index]
+					print(qr)
 					print(src)
 					break;
 			category = driver.find_elements(By.XPATH, '//div[@id="Product_BreadcrumbsLink"]/a') 
-			category = category[0]
-			print(category.get_attribute('innerHTML'))
+			category = category[0].get_attribute('innerHTML')
+			print(category)
 			price = driver.find_elements(By.XPATH, '//div[@id="Product_PriceNew"]') 
-			price = price[0]
-			print(price.get_attribute('innerHTML'))
+			price = price[0].get_attribute('innerHTML')
+			print(price)
+			try:	
+				cursor.execute('INSERT INTO items3 (qr_code, item_type, price, image) VALUES ("%s", "%s", "%s", "%s") ON DUPLICATE KEY UPDATE price = "%s", item_type = "%s"'  % (qr, category, price, src, price, category))
+			except Exception as e:
+				#reconnect()
+				db = MySQLdb.connect(
+					host = '188.121.44.180',
+					user = 'dressapp',
+					passwd = 'Dressapp1',
+					db = 'dressapp'
+					)
+				print('Something wrong with query: ',e)
 			driver.close();
 	driver.close();
-
-
-
-
-# http://stackoverflow.com/questions/372885/how-do-i-connect-to-a-mysql-database-in-python
-# #!/usr/bin/python
-# import MySQLdb
-
-# db = MySQLdb.connect(host="localhost",    # your host, usually localhost
-#                      user="john",         # your username
-#                      passwd="megajonhy",  # your password
-#                      db="jonhydb")        # name of the data base
-
-# # you must create a Cursor object. It will let
-# #  you execute all the queries you need
-# cur = db.cursor()
-
-# # Use all the SQL you like
-# cur.execute("SELECT * FROM YOUR_TABLE_NAME")
-
-# # print all the first cell of all the rows
-# for row in cur.fetchall():
-#     print row[0]
-
-# db.close()

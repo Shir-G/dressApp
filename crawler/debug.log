@@ -13,3 +13,399 @@
 [0504/112859.414:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
 [0504/112859.417:ERROR:exception_snapshot_win.cc(87)] thread ID 7768 not found in process
 [0504/112859.417:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0509/120941.744:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0509/120941.749:ERROR:exception_snapshot_win.cc(87)] thread ID 7228 not found in process
+[0509/120941.749:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0509/120941.809:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0509/120941.831:ERROR:exception_snapshot_win.cc(87)] thread ID 9304 not found in process
+[0509/120941.831:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0509/120958.412:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0509/120958.417:ERROR:exception_snapshot_win.cc(87)] thread ID 10292 not found in process
+[0509/120958.417:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0509/122731.395:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0509/122731.397:ERROR:exception_snapshot_win.cc(87)] thread ID 10444 not found in process
+[0509/122731.398:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0509/122731.429:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0509/122731.487:ERROR:exception_snapshot_win.cc(87)] thread ID 3796 not found in process
+[0509/122731.487:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0512/120943.382:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0512/120943.403:ERROR:exception_snapshot_win.cc(87)] thread ID 9664 not found in process
+[0512/120943.404:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0512/120955.619:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0512/120955.622:ERROR:exception_snapshot_win.cc(87)] thread ID 7800 not found in process
+[0512/120955.622:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0512/121009.925:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0512/121009.928:ERROR:exception_snapshot_win.cc(87)] thread ID 8132 not found in process
+[0512/121009.928:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0512/121044.564:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0512/121044.567:ERROR:exception_snapshot_win.cc(87)] thread ID 9388 not found in process
+[0512/121044.568:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0512/121120.674:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0512/121120.677:ERROR:exception_snapshot_win.cc(87)] thread ID 9200 not found in process
+[0512/121120.677:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/153920.148:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/153920.167:ERROR:exception_snapshot_win.cc(87)] thread ID 9560 not found in process
+[0514/153920.167:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/153920.087:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/153920.187:ERROR:exception_snapshot_win.cc(87)] thread ID 8820 not found in process
+[0514/153920.187:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/165420.267:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/165420.282:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/165420.286:ERROR:exception_snapshot_win.cc(87)] thread ID 11576 not found in process
+[0514/165420.286:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/165420.526:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/165420.529:ERROR:exception_snapshot_win.cc(87)] thread ID 10724 not found in process
+[0514/165420.530:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/165552.893:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/165552.902:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/165552.929:ERROR:exception_snapshot_win.cc(87)] thread ID 12416 not found in process
+[0514/165552.929:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/165553.257:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/165553.367:ERROR:exception_snapshot_win.cc(87)] thread ID 1284 not found in process
+[0514/165553.368:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/173941.431:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/173941.451:ERROR:exception_snapshot_win.cc(87)] thread ID 7484 not found in process
+[0514/173941.451:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/173941.596:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/173941.610:ERROR:exception_snapshot_win.cc(87)] thread ID 12352 not found in process
+[0514/173941.610:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/173941.628:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/173941.641:ERROR:exception_snapshot_win.cc(87)] thread ID 8744 not found in process
+[0514/173941.641:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/173941.647:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/173941.650:ERROR:exception_snapshot_win.cc(87)] thread ID 5372 not found in process
+[0514/173941.650:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/174051.672:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/174051.678:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/174051.680:ERROR:exception_snapshot_win.cc(87)] thread ID 13032 not found in process
+[0514/174051.680:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/174051.739:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/174051.741:ERROR:exception_snapshot_win.cc(87)] thread ID 5836 not found in process
+[0514/174051.742:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/174445.253:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/174445.287:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/174445.248:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/174445.257:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/174445.294:ERROR:exception_snapshot_win.cc(87)] thread ID 13300 not found in process
+[0514/174445.295:ERROR:exception_snapshot_win.cc(87)] thread ID 10156 not found in process
+[0514/174445.295:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/174445.295:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/174445.290:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/174445.296:ERROR:exception_snapshot_win.cc(87)] thread ID 8552 not found in process
+[0514/174445.296:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/174632.057:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/174632.065:ERROR:exception_snapshot_win.cc(87)] thread ID 12152 not found in process
+[0514/174632.065:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/174632.084:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/174632.089:ERROR:exception_snapshot_win.cc(87)] thread ID 11516 not found in process
+[0514/174632.089:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/174729.357:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/174729.360:ERROR:exception_snapshot_win.cc(87)] thread ID 11804 not found in process
+[0514/174729.360:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/175045.512:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/175045.514:ERROR:exception_snapshot_win.cc(87)] thread ID 8392 not found in process
+[0514/175045.515:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/175045.540:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/175045.542:ERROR:exception_snapshot_win.cc(87)] thread ID 12636 not found in process
+[0514/175045.542:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/175400.735:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/175400.737:ERROR:exception_snapshot_win.cc(87)] thread ID 7972 not found in process
+[0514/175400.737:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/175637.628:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/175637.630:ERROR:exception_snapshot_win.cc(87)] thread ID 5596 not found in process
+[0514/175637.630:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/175637.742:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/175637.745:ERROR:exception_snapshot_win.cc(87)] thread ID 12232 not found in process
+[0514/175637.745:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/175843.146:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/175843.149:ERROR:exception_snapshot_win.cc(87)] thread ID 13104 not found in process
+[0514/175843.150:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/175843.153:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/175843.155:ERROR:exception_snapshot_win.cc(87)] thread ID 10712 not found in process
+[0514/175843.155:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/180038.249:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/180038.251:ERROR:exception_snapshot_win.cc(87)] thread ID 6472 not found in process
+[0514/180038.251:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/180038.324:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/180038.327:ERROR:exception_snapshot_win.cc(87)] thread ID 9600 not found in process
+[0514/180038.327:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/180234.480:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/180234.486:ERROR:exception_snapshot_win.cc(87)] thread ID 13196 not found in process
+[0514/180234.486:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/180234.681:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/180234.685:ERROR:exception_snapshot_win.cc(87)] thread ID 2916 not found in process
+[0514/180234.685:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/180410.164:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/180410.167:ERROR:exception_snapshot_win.cc(87)] thread ID 13112 not found in process
+[0514/180410.167:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/180701.258:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/180701.274:ERROR:exception_snapshot_win.cc(87)] thread ID 12932 not found in process
+[0514/180701.274:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/180701.348:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/180701.424:ERROR:exception_snapshot_win.cc(87)] thread ID 10784 not found in process
+[0514/180701.424:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/180918.496:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/180918.500:ERROR:exception_snapshot_win.cc(87)] thread ID 8440 not found in process
+[0514/180918.500:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/181240.700:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/181240.705:ERROR:exception_snapshot_win.cc(87)] thread ID 8488 not found in process
+[0514/181240.705:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/181240.760:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/181240.764:ERROR:exception_snapshot_win.cc(87)] thread ID 5132 not found in process
+[0514/181240.765:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/181853.045:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/181853.048:ERROR:exception_snapshot_win.cc(87)] thread ID 12484 not found in process
+[0514/181853.048:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/182152.881:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/182152.887:ERROR:exception_snapshot_win.cc(87)] thread ID 6096 not found in process
+[0514/182152.887:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/182153.006:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/182153.009:ERROR:exception_snapshot_win.cc(87)] thread ID 6124 not found in process
+[0514/182153.010:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/182318.537:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/182318.539:ERROR:exception_snapshot_win.cc(87)] thread ID 3196 not found in process
+[0514/182318.539:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/190627.061:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/190627.074:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/190627.087:ERROR:exception_snapshot_win.cc(87)] thread ID 11568 not found in process
+[0514/190627.087:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/190627.089:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/190627.089:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/190627.089:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/190627.089:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/190627.089:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/190627.105:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/190627.106:ERROR:exception_snapshot_win.cc(87)] thread ID 13032 not found in process
+[0514/190627.106:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/190858.466:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/190858.469:ERROR:exception_snapshot_win.cc(87)] thread ID 9480 not found in process
+[0514/190858.469:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/190858.488:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/190858.491:ERROR:exception_snapshot_win.cc(87)] thread ID 8540 not found in process
+[0514/190858.491:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/191452.716:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/191452.810:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/191452.812:ERROR:exception_snapshot_win.cc(87)] thread ID 6852 not found in process
+[0514/191452.813:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/191452.858:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/191452.862:ERROR:exception_snapshot_win.cc(87)] thread ID 12036 not found in process
+[0514/191452.862:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/191812.458:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/191812.486:ERROR:exception_snapshot_win.cc(87)] thread ID 12852 not found in process
+[0514/191812.497:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/191812.434:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/191812.575:ERROR:exception_snapshot_win.cc(87)] thread ID 11684 not found in process
+[0514/191812.575:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/202407.014:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/202407.021:ERROR:exception_snapshot_win.cc(87)] thread ID 2160 not found in process
+[0514/202407.021:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/202407.017:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/202407.031:ERROR:exception_snapshot_win.cc(87)] thread ID 11808 not found in process
+[0514/202407.031:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/202407.152:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/202407.154:ERROR:exception_snapshot_win.cc(87)] thread ID 12316 not found in process
+[0514/202407.154:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/205523.141:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/205523.143:ERROR:exception_snapshot_win.cc(87)] thread ID 12160 not found in process
+[0514/205523.144:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/205523.170:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/205523.172:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/205523.173:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/205523.173:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/205523.173:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/205523.173:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/205523.173:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/205523.173:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/205523.173:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/205523.173:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/205523.174:ERROR:exception_snapshot_win.cc(87)] thread ID 12512 not found in process
+[0514/205523.175:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/210053.926:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/210053.929:ERROR:exception_snapshot_win.cc(87)] thread ID 9004 not found in process
+[0514/210053.929:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/210053.983:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/210053.987:ERROR:exception_snapshot_win.cc(87)] thread ID 5740 not found in process
+[0514/210053.987:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/211159.377:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/211159.382:ERROR:exception_snapshot_win.cc(87)] thread ID 13484 not found in process
+[0514/211159.382:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/211159.426:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/211159.428:ERROR:exception_snapshot_win.cc(87)] thread ID 13428 not found in process
+[0514/211159.428:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/213031.095:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/213031.099:ERROR:exception_snapshot_win.cc(87)] thread ID 9688 not found in process
+[0514/213031.099:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/213031.093:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/213031.111:ERROR:exception_snapshot_win.cc(87)] thread ID 10396 not found in process
+[0514/213031.111:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/214752.614:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/214752.655:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0514/214752.661:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/214752.662:ERROR:exception_snapshot_win.cc(87)] thread ID 13192 not found in process
+[0514/214752.662:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/214752.657:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/214752.663:ERROR:exception_snapshot_win.cc(87)] thread ID 9688 not found in process
+[0514/214752.663:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/230427.082:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/230427.087:ERROR:exception_snapshot_win.cc(87)] thread ID 12236 not found in process
+[0514/230427.087:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0514/230427.085:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0514/230427.089:ERROR:exception_snapshot_win.cc(87)] thread ID 12336 not found in process
+[0514/230427.089:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/095000.635:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/095000.682:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/095000.685:ERROR:exception_snapshot_win.cc(87)] thread ID 12764 not found in process
+[0515/095000.685:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/095000.686:ERROR:exception_snapshot_win.cc(87)] thread ID 8792 not found in process
+[0515/095000.686:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/101210.120:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/101210.128:ERROR:exception_snapshot_win.cc(87)] thread ID 3128 not found in process
+[0515/101210.128:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/101210.125:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/101210.128:ERROR:exception_snapshot_win.cc(87)] thread ID 12044 not found in process
+[0515/101210.128:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/154255.765:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/154255.776:ERROR:exception_snapshot_win.cc(87)] thread ID 13200 not found in process
+[0515/154255.776:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/154255.750:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/154255.780:ERROR:exception_snapshot_win.cc(87)] thread ID 14196 not found in process
+[0515/154255.780:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/154504.452:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/154504.459:ERROR:exception_snapshot_win.cc(87)] thread ID 7752 not found in process
+[0515/154504.459:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/154504.592:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/154504.597:ERROR:exception_snapshot_win.cc(87)] thread ID 8420 not found in process
+[0515/154504.597:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/154909.079:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/154909.080:ERROR:exception_snapshot_win.cc(87)] thread ID 12496 not found in process
+[0515/154909.080:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/154909.135:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/154909.136:ERROR:exception_snapshot_win.cc(87)] thread ID 2880 not found in process
+[0515/154909.136:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/155103.415:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/155103.417:ERROR:exception_snapshot_win.cc(87)] thread ID 10760 not found in process
+[0515/155103.418:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0515/155103.420:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0515/155103.423:ERROR:exception_snapshot_win.cc(87)] thread ID 10744 not found in process
+[0515/155103.423:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/141611.425:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/141611.452:ERROR:exception_snapshot_win.cc(87)] thread ID 7124 not found in process
+[0516/141611.453:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/141744.321:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/141744.323:ERROR:exception_snapshot_win.cc(87)] thread ID 13600 not found in process
+[0516/141744.323:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/141744.345:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/141744.347:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/141744.347:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/141744.348:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/141744.348:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/141744.348:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/141744.349:ERROR:exception_snapshot_win.cc(87)] thread ID 13740 not found in process
+[0516/141744.349:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/142853.444:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/142853.449:ERROR:exception_snapshot_win.cc(87)] thread ID 13172 not found in process
+[0516/142853.449:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/142853.446:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/142853.451:ERROR:exception_snapshot_win.cc(87)] thread ID 10644 not found in process
+[0516/142853.451:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/142853.475:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/142853.477:ERROR:exception_snapshot_win.cc(87)] thread ID 8100 not found in process
+[0516/142853.477:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/142853.507:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/142853.510:ERROR:exception_snapshot_win.cc(87)] thread ID 496 not found in process
+[0516/142853.510:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/143025.647:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/143025.650:ERROR:exception_snapshot_win.cc(87)] thread ID 13208 not found in process
+[0516/143025.650:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/143025.710:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/143025.713:ERROR:exception_snapshot_win.cc(87)] thread ID 13256 not found in process
+[0516/143025.713:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/143206.360:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.363:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.363:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.363:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.364:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.364:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.364:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/143206.365:ERROR:exception_snapshot_win.cc(87)] thread ID 13376 not found in process
+[0516/143206.365:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/143206.398:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.400:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.401:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.401:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.401:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.401:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/143206.401:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/143206.403:ERROR:exception_snapshot_win.cc(87)] thread ID 7356 not found in process
+[0516/143206.403:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/143404.953:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/143404.955:ERROR:exception_snapshot_win.cc(87)] thread ID 5572 not found in process
+[0516/143404.955:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/143808.607:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/143808.611:ERROR:exception_snapshot_win.cc(87)] thread ID 7496 not found in process
+[0516/143808.613:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/151636.050:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/151636.056:ERROR:exception_snapshot_win.cc(87)] thread ID 7028 not found in process
+[0516/151636.056:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/151636.482:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/151636.485:ERROR:exception_snapshot_win.cc(87)] thread ID 13452 not found in process
+[0516/151636.485:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/154517.859:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/154517.856:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/154517.866:ERROR:exception_snapshot_win.cc(87)] thread ID 8072 not found in process
+[0516/154517.867:ERROR:exception_snapshot_win.cc(87)] thread ID 13004 not found in process
+[0516/154517.867:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/154517.867:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/155734.979:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0516/155734.989:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/155734.991:ERROR:exception_snapshot_win.cc(87)] thread ID 6488 not found in process
+[0516/155734.991:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/155735.195:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/155735.200:ERROR:exception_snapshot_win.cc(87)] thread ID 7844 not found in process
+[0516/155735.200:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/160025.368:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/160025.372:ERROR:exception_snapshot_win.cc(87)] thread ID 9440 not found in process
+[0516/160025.372:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/160025.600:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/160025.603:ERROR:exception_snapshot_win.cc(87)] thread ID 3508 not found in process
+[0516/160025.630:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/195037.151:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/195037.157:ERROR:exception_snapshot_win.cc(87)] thread ID 14056 not found in process
+[0516/195037.157:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/195037.275:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/195037.284:ERROR:exception_snapshot_win.cc(87)] thread ID 13452 not found in process
+[0516/195037.284:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/204118.573:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/204118.578:ERROR:exception_snapshot_win.cc(87)] thread ID 13916 not found in process
+[0516/204118.578:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/210736.345:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/210736.359:ERROR:exception_snapshot_win.cc(87)] thread ID 11724 not found in process
+[0516/210736.359:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0516/210736.527:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0516/210736.529:ERROR:exception_snapshot_win.cc(87)] thread ID 15056 not found in process
+[0516/210736.530:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0518/124846.086:ERROR:process_reader_win.cc(142)] SuspendThread: ‏‏הגישה נדחתה. (0x5)
+[0518/124846.089:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0518/124846.091:ERROR:exception_snapshot_win.cc(87)] thread ID 7124 not found in process
+[0518/124846.091:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0518/124846.249:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0518/124846.251:ERROR:exception_snapshot_win.cc(87)] thread ID 8388 not found in process
+[0518/124846.251:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0518/143907.178:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0518/143907.187:ERROR:exception_snapshot_win.cc(87)] thread ID 9568 not found in process
+[0518/143907.188:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0518/143907.281:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0518/143907.288:ERROR:exception_snapshot_win.cc(87)] thread ID 10828 not found in process
+[0518/143907.288:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0518/144941.026:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0518/144941.034:ERROR:exception_snapshot_win.cc(87)] thread ID 15672 not found in process
+[0518/144941.035:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0518/144941.048:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0518/144941.051:ERROR:exception_snapshot_win.cc(87)] thread ID 8904 not found in process
+[0518/144941.051:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0518/151350.800:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0518/151350.833:ERROR:exception_snapshot_win.cc(87)] thread ID 15396 not found in process
+[0518/151350.835:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0518/151350.818:ERROR:process_reader_win.cc(114)] NtOpenThread: ‏‏{הגישה נדחתה} תהליך ביקש לגשת לאובייקט, אך לא קיבל זכויות גישה אלה.  (0xc0000022)
+[0518/151350.836:ERROR:exception_snapshot_win.cc(87)] thread ID 14340 not found in process
+[0518/151350.836:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed

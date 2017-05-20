@@ -1,4 +1,5 @@
 <?php
+    require_once 'includes/phpPasswordHashingLib/passwordLib.php';
     include 'connect.php';
     session_start();
     if (isset($_SESSION['user_id'])) {
@@ -26,22 +27,26 @@
         $result = mysql_query($query) or die("failed to login" .mysql_error());
         $row = mysql_fetch_array($result);
 
-        if ($row['email'] == $email) { //if user is found
-            if (password_verify($password, $row['password'])) { //verify if password was entered correctly
-                $msg = "welcome ".$row['username'];
+        if ($row['active'] == 0) {
+            $msg = "Please check your email to activate your account";
+        }
+        else{
+            if ($row['email'] == $email) { //if user is found
+                if (password_verify($password, $row['password'])) { //verify if password was entered correctly
+                    $msg = "welcome ".$row['username'];
+                }
+                else {
+                    echo "password incorrect";
+                    $login=false;
+                }
             }
             else {
-                echo "password incorrect";
+                echo "email incorrect";
                 $login=false;
             }
         }
-        else {
-            echo "email incorrect";
-            $login=false;
-        }
 
         if ($login) { //if credentials are right
-            
             $_SESSION['user_id'] = $row['user_id'];
             header("Location: homepage.php"); //redirect to hompage
         }

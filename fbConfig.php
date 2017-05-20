@@ -56,11 +56,12 @@
         $permissions = "user";
         $username = $fbUserData['first_name'];
         $femail = $fbUserData['email'];
+        $hash = md5( rand(0,1000) );
 
         $findUserQuery = "SELECT * FROM users WHERE email = '$femail'";
         $findUserResult = mysql_query( $findUserQuery, $conn );
         if (! $findUserResult) {
-            $query = "INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `my_closet`, `liked_outfits`, `account_permissions`) VALUES ('', '$username', '$femail', NULL, NULL, NULL, '$permissions')";
+            $query = "INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `my_closet`, `liked_outfits`, `account_permissions`,`hash`) VALUES ('', '$username', '$femail', NULL, NULL, NULL, '$permissions', '$hash')";
             $retval = mysql_query( $query, $conn );
             $insertId = mysql_insert_id();              
             if(! $retval ) {
@@ -71,14 +72,36 @@
                 $query = "SELECT * FROM users WHERE email = '$femail' ";
                 $result = mysql_query($query) or die("failed to login" .mysql_error());
                 $row = mysql_fetch_array($result);
+                /*if ($row['active']==0) {
+                    $to      = $email; // Send email to our user
+                    $subject = 'Signup | Verification'; // Give the email a subject 
+                    $message = '
+                     
+                    Thanks for signing up!
+                    Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+                     
+                    ------------------------
+                    Username: '.$username.'
+                    ------------------------
+                     
+                    Please click this link to activate your account:
+                    http://www.dressapp.org/alpha/verify.php?email='.$email.'&hash='.$hash.'
+                     
+                    '; // Our message above including the link
+                                         
+                    $headers = 'From:noreply@DressApp.com' . "\r\n"; // Set from headers
+                    mail($to, $subject, $message, $headers); // Send our email
+                }*/
                 $_SESSION['user_id'] = $row['user_id'];
                 header("Location: homepage.php");
             }
         }
         else {
             $foundUser = mysql_fetch_array($findUserResult);
-            $_SESSION['user_id'] = $foundUser['user_id'];
-            header("Location: homepage.php");
+            //if ($foundUser['active'] != 0) {
+                $_SESSION['user_id'] = $foundUser['user_id'];
+                header("Location: homepage.php");
+            //}
         }
         
         

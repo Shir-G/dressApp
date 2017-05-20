@@ -39,10 +39,12 @@
             <input type="text" name="category" id="searchInputField" placeholder="Search a Category" value="<?php echo $category; ?>">
             <button href="#" id="outfitSearchBtn">Search</button>
         </form>
+        <?php if ($isSearching) { 
+        ?>
         <form method="post" action="outfitSearch.php">
            <button id="clearSearch" name="clear">X</button> 
         </form>
-        
+        <?php } ?>
     </section>
     <section>
 

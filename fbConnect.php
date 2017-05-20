@@ -13,7 +13,7 @@ use Facebook\Exceptions\FacebookSDKException;
 
 $appId = '1045482048929474'; //Facebook App ID
 $appSecret = '6ce4033c510be98b28a55785b06c36f5'; // Facebook App Secret
-$redirectURL = 'http://localhost:8080/dressApp/fbConfig.php'; // Callback URL
+$redirectURL = 'http://www.dressapp.org/alpha/fbConfig.php'; // Callback URL
 $fbPermissions = array('email');  //Optional permissions
 
 $fb = new Facebook(array(
