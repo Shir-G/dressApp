@@ -2,6 +2,8 @@
     include 'connect.php';
     require_once 'fbConnect.php';
 
+    $fbButton = '<a href="logout.php">LOGOUT</a>';
+
     if(isset($accessToken)){
         if(isset($_SESSION['facebook_access_token'])){
             $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
@@ -56,13 +58,15 @@
         $permissions = "user";
         $username = $fbUserData['first_name'];
         $femail = $fbUserData['email'];
-        $hash = md5( rand(0,1000) );
+        $hash = "123";//md5( rand(0,1000) );
 
         $findUserQuery = "SELECT * FROM users WHERE email = '$femail'";
         $findUserResult = mysql_query( $findUserQuery, $conn );
-        if (! $findUserResult) {
-            $query = "INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `my_closet`, `liked_outfits`, `account_permissions`,`hash`) VALUES ('', '$username', '$femail', NULL, NULL, NULL, '$permissions', '$hash')";
-            $retval = mysql_query( $query, $conn );
+        if (mysql_num_rows($findUserResult) == 0) {
+            $fbButton = '<p>Sorry, you need to sign up first<p/>';
+
+/*            $query = "INSERT INTO `users` (`username`, `email`, `account_permissions`, `hash`, `active`) VALUES ('$username', '$femail', '$permissions', '$hash', 1)";
+            $retval = mysql_query( $query) or die(mysql_error());
             $insertId = mysql_insert_id();              
             if(! $retval ) {
                 die('Could not enter data: ' . mysql_error());
@@ -72,36 +76,15 @@
                 $query = "SELECT * FROM users WHERE email = '$femail' ";
                 $result = mysql_query($query) or die("failed to login" .mysql_error());
                 $row = mysql_fetch_array($result);
-                /*if ($row['active']==0) {
-                    $to      = $email; // Send email to our user
-                    $subject = 'Signup | Verification'; // Give the email a subject 
-                    $message = '
-                     
-                    Thanks for signing up!
-                    Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
-                     
-                    ------------------------
-                    Username: '.$username.'
-                    ------------------------
-                     
-                    Please click this link to activate your account:
-                    http://www.dressapp.org/alpha/verify.php?email='.$email.'&hash='.$hash.'
-                     
-                    '; // Our message above including the link
-                                         
-                    $headers = 'From:noreply@DressApp.com' . "\r\n"; // Set from headers
-                    mail($to, $subject, $message, $headers); // Send our email
-                }*/
+    
                 $_SESSION['user_id'] = $row['user_id'];
-                header("Location: homepage.php");
-            }
+                //header("Location: fb.php");
+            }*/
         }
         else {
             $foundUser = mysql_fetch_array($findUserResult);
-            //if ($foundUser['active'] != 0) {
-                $_SESSION['user_id'] = $foundUser['user_id'];
-                header("Location: homepage.php");
-            //}
+            $_SESSION['user_id'] = $foundUser['user_id'];
+            //header("Location: fb.php");
         }
         
         
@@ -109,15 +92,16 @@
         $logoutURL = $helper->getLogoutUrl($accessToken, $redirectURL.'logout.php');
         
         // Render facebook profile data
-        if(empty($userData)){
-            $fbButton = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
+        if(empty($fbUserData)){
+            $fbButton = '<h3 style="color:red">Some problem occurred, please try again.</h3><a href="logout.php">logout</a>';
         }
         
     }else{
+
         // Get login url
         $loginURL = $helper->getLoginUrl($redirectURL, $fbPermissions);
         
         // Render facebook login button
-        $fbButton = '<a href="'.htmlspecialchars($loginURL).'"><img src="images/fblogin-btn.png" style="width:200px"></a>';
+        $fbButton = '<a href="'.htmlspecialchars($loginURL).'">LOGIN WITH FACEBOOK</a>';
     }
 ?>

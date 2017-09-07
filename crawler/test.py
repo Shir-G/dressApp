@@ -1,8 +1,9 @@
-import MySQLdb
+#import MySQLdb
 import sys
+import pymysql
 
 try:
-    db = MySQLdb.connect(
+    db = pymysql.connect(
         host = '188.121.44.180',
         user = 'dressapp',
         passwd = 'Dressapp1',
@@ -23,7 +24,9 @@ cursor = db.cursor()
 # store = "store"
 #cursor.execute('INSERT INTO items3 (item_id, qr_code, item_type, price, store, image) VALUES (NULL, "code", "type", "price", "store", "image");')
 try:
-    cursor.execute('INSERT INTO items3 (qr_code, item_type, price, image) VALUES ("%s", "%s", "%s", "%s") ON DUPLICATE KEY UPDATE price = "%s"'  % (qr, category, price, src, price))
+    cursor.execute('SELECT * FROM  items3')
+    print "yep"
+    #cursor.execute('INSERT INTO items3 (qr_code, item_type, price, image) VALUES ("%s", "%s", "%s", "%s") ON DUPLICATE KEY UPDATE price = "%s"'  % (qr, category, price, src, price))
 except Exception as e:
     sys.exit('nope')
 # result = cursor.fetchall()

@@ -6,7 +6,6 @@ var createCanvas = function(outfit, items){
     canvas.width = 1000;
     canvas.height = 600;
     canvas.style.border = '1px solid #000';
-    var rect = canvas.getBoundingClientRect();
 
     var numOfItems = outfit.src.length;
     for (var i=0; i<numOfItems; i++) {
@@ -20,22 +19,25 @@ var createCanvas = function(outfit, items){
     	}
     }
 
-    function UnderElement(element,mouse) {
-        var elemPosition = {'top':Number(element.y) + Number(element.height) , 'left':Number(element.x) + Number(element.width)};
 
-        return ((mouse.x > Number(element.x) && mouse.x < elemPosition.left) && (mouse.y > Number(element.y) && mouse.y < elemPosition.top))
-    }
-
-    function mousePosition(canvas, event){
-        return {
-            x: Math.round(event.clientX - rect.left),
-            y: Math.round(event.clientY - rect.top)
-        };
-    }
 
     window.onload = function(){
     	var oldCanvas = document.getElementById("holder");
     	document.body.replaceChild(canvas, oldCanvas);
+        var rect = canvas.getBoundingClientRect();
+
+        function UnderElement(element,mouse) {
+            var elemPosition = {'top':Number(element.y) + Number(element.height) , 'left':Number(element.x) + Number(element.width)};
+
+            return ((mouse.x > Number(element.x) && mouse.x < elemPosition.left) && (mouse.y > Number(element.y) && mouse.y < elemPosition.top))
+        }
+
+        function mousePosition(canvas, event){
+            return {
+                x: Math.round(event.clientX - rect.left),
+                y: Math.round(event.clientY - rect.top)
+            };
+        }
 
         canvas.addEventListener("mousemove", function(event) {
             var mousePos = mousePosition(this, event);

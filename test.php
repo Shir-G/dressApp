@@ -1,41 +1,51 @@
-<?php
-    include 'user_config.php';
-    //$shir = '12345';
-    if (isset($_GET['itemID'])) {
-        $shir = $_GET['itemID'];
-    }
+<?php 
+include 'connect.php';
 
-    $query = "UPDATE `users` SET `my_closet` = CONCAT_WS(',', my_closet, '$shir') WHERE `user_id` ='". $user['user_id']."'";
-    $retval = mysql_query( $query, $conn );
-    $insertId = mysql_insert_id();
+$outfid_id = 1;
+
+$query = "SELECT * FROM `outfits` WHERE id = $outfid_id";
+$result = mysql_query($query) or die("failed to find outfid_id" .mysql_error());
+$ratingRow = mysql_fetch_assoc($result);
+$people = $ratingRow['total_people'];
+$total = $ratingRow['total_rates'];
+
+//holds the num pf people ant total votes for new calculation in ajax method
+$string = $people." ".$total;
+
+//if the ajax method was called and returned coerrect values
+if (isset($_POST['star']) && isset($_POST['total'])) {
+    $stars = $_POST['star'];
+    $total = $_POST['total'];
+    $people = $_POST['people'];
+
+    //updates the values in the DB
+    $stars_query = "UPDATE `outfits` SET rate = ".$stars." , total_people = ".$people.", total_rates = ".$total." WHERE id =".$outfid_id;
+        
+    $retval = mysql_query( $stars_query, $conn );
     if(! $retval ) { //if qurey execution didnt succeed
         die('Could not enter data: ' . mysql_error());
     }
-    else echo "successfully!!!"
-?>
 
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test</title>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="includes/outfitRate.js"></script>
+    <link rel="stylesheet" href="includes/style.css">
 </head>
 <body>
-    <h1> Test</h1>
-    <?php if( !empty($user) ): ?>
-
-        <br />Welcome <?= $user['username']; ?> 
-        <br /><br />You are successfully logged in!
-        <br /><br />
-        <h3><?= $shir; ?></h3><br>
-        <a href="logout.php">Logout?</a>
-
-    <?php else: ?>
-
-        <h1>Please Login or Register</h1>
-        <a href="login.php">Login</a> or
-        <a href="register.php">Register</a>
-
-    <?php endif; ?>
-
+    <section id="rate_section" title=" <?= $string ?> ">
+        <button class="ratings_stars" value="1" name="star"></button>
+        <button class="ratings_stars" value="2" name="star"></button>
+        <button class="ratings_stars" value="3" name="star"></button>
+        <button class="ratings_stars" value="4" name="star"></button>
+        <button class="ratings_stars" value="5" name="star"></button>
+        <div id="total_votes"><?= $ratingRow['rate'] ?></div>
+    </section>
 </body>
 </html>

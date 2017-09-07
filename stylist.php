@@ -35,7 +35,7 @@
         <?php
             if ($user['user_id'] == $_GET['stylistID']){
         ?>
-            <a href="editProfile.php?stylistID="<?= $_GET['stylistID']; ?>>Edit your profile details</a>
+            <a href="editProfile.php?stylistID=<?php echo $stylistRow['stylist_id'] ?>">Edit your profile details</a>
         <?php } ?>
         <h3><?php echo "Stylist ID: ".$stylistRow['stylist_id']; ?></h3>
         <h4>Description:</h4>

@@ -14,7 +14,6 @@ window.onload = function(){
         function redraw(){
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (var i = 0; i< imgArray.length; i++) {
-                imgArray[i].src.style.opacity = 0.2; //fades out images the are alredy dragged
                 ctx.drawImage(imgArray[i].src, imgArray[i].x, imgArray[i].y,imgArray[i].width, imgArray[i].height);
                 if (imgArray[i]==selected) {
                     ctx.strokeStyle = '#D3D3D3';  // some color/style
@@ -41,6 +40,7 @@ window.onload = function(){
             var itemId = evt.dataTransfer.getData("itemId");
             for (var i = 0; i < images.length; i++) {
                 if (images[i].src == data) {
+                    images[i].style.opacity = 0.2; //fades out images that have alredy been dragged in
                     var isInArray = false;
                     for (var j = 0; j < imgArray.length; j++) {
                         if (imgArray[j].src.src == data) {
@@ -50,11 +50,18 @@ window.onload = function(){
                     if (!isInArray) {
                         var coord = mousePosition(canvas, evt); //drop on mouse position
                         var imgSize = images[i].getBoundingClientRect();
-                        imgArray.push({'x':coord.x-imgSize.width/2, 'y':coord.y-imgSize.height/2, 'src':images[i], 'bool':false, 'width':imgSize.width*2, 'height':imgSize.height*2, 'imgSrc':images[i].src, 'id':itemId});
+                        var img = new Image();
+                        img.setAttribute('crossOrigin', 'anonymous');
+                        img.src = images[i].src;
+                        img.onload = function() {
+                            imgArray.push({'x':coord.x-imgSize.width/2, 'y':coord.y-imgSize.height/2, 'src':img, 'bool':false, 'width':imgSize.width*2, 'height':imgSize.height*2, 'imgSrc':img.src, 'id':itemId});
+                            redraw();
+                            console.log("redraw");
+                        }
                     }
                 }
             }
-            redraw();
+            //redraw();
         }, false);
 
         function UnderElement(element,mouse) {
@@ -75,34 +82,24 @@ window.onload = function(){
         var selected;
         var lastDownTarget;
 
-        /*function addResizeBorder(item){
-            item.src.classList.add("resize_border");
-            console.log("resize_border= "+item.src.className);
-            for (var i = 0; i < imgArray.length; i++) {
-                if (imgArray[i] != item) {
-                    item.src.classList.remove("resize_border");
-                }
-            }
-        }*/
-
         document.addEventListener('keydown', function(evt){
             
             if (selected) {
                 if (lastDownTarget == canvas) {
-                    if (evt.keyCode == 40) { //down arrow key
+                    if (evt.keyCode == 38) { //up arrow key
                         evt.preventDefault();
-                        console.log("last = "+evt.keyCode);
-                        //var imgSize = selected.getBoundingClientRect();
-                        selected.width -= 10;
-                        selected.height -= 10;
+                        if (selected.width <= 1500 && selected.height <= 1500) {
+                            selected.width *= 1.05;
+                            selected.height *= 1.05;
+                        }
                         redraw();
                     }
-                    if (evt.keyCode == 38) { //down arrow key
+                    if (evt.keyCode == 40) { //down arrow key
                         evt.preventDefault();
-                        console.log("last = "+evt.keyCode);
-                        //var imgSize = selected.getBoundingClientRect();
-                        selected.width += 10;
-                        selected.height += 10;
+                        if (selected.width >=100 && selected.height>=100) {
+                            selected.width *= 0.95;
+                        selected.height *= 0.95;
+                        }
                         redraw();
                     }
                 }
@@ -116,9 +113,7 @@ window.onload = function(){
             for (var i = 0; i< imgArray.length; i++) {
                 if (UnderElement(imgArray[i],mousePos)) {
                     selected = imgArray[i];
-                    console.log("selected="+selected.src.src);
                     lastDownTarget = event.target;
-                    //addResizeBorder(selected);
                     imgArray[i].bool = true;
                     delta.x = imgArray[i].x - mousePos.x;
                     delta.y = imgArray[i].y - mousePos.y;
@@ -176,64 +171,43 @@ window.onload = function(){
             redraw();  
         }, false);
 
-        document.getElementById('makeJpg').addEventListener('click', function(event) {
-            var canvas = document.getElementById('holder');
-            var img = canvas.toDataURL('image/jpg');
-            var element = document.createElement("img");
-            element.src = img;
-            document.body.append(element);
-
-            /* for downloading the picture
-            // var dlLink = document.createElement('a');
-            // dlLink.download = "fileName";
-            // dlLink.href = imgURL;
-            // dlLink.dataset.downloadurl = ['image/jpg', dlLink.download, dlLink.href].join(':');
-
-            // document.body.appendChild(dlLink);
-            // dlLink.click();
-            // document.body.removeChild(dlLink);
-            */
-        });
 
         document.getElementById('canvasForm').addEventListener('submit', function(e) {         
             
             e.preventDefault();
-            var oldCanvas = document.getElementById('holder');
-            var canvas = document.createElement('canvas');
-            var context = canvas.getContext('2d');
-            canvas.width = oldCanvas.width;
-            canvas.height = oldCanvas.height;
-            canvas.style.border = '1px solid #000';
 
-            if (imgArray[0] != undefined) {
-                imgArray.forEach(function(img) {
-                    context.drawImage(img.src, img.x, img.y, img.width, img.height);
-                });
-            }
-            document.body.append(canvas);
+            var canvas = document.getElementById('holder');
+            var img = canvas.toDataURL('image/png');
             var category = document.getElementById("category").value;
-            sumbitFunc(imgArray, category);
+            sumbitFunc(imgArray, category ,img);
             
         });
 
         
 
     }
+
+    //enabling bootstrap popovers for tips
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
 }
 
 var sumbitFunc = null;
 
 $(document).ready(function() {
-    sumbitFunc = function (dodo, cat) {
+    sumbitFunc = function (dodo, cat, img) {
         $.ajax({
             type : 'POST',
-            url: 'outfitEditor.php',
-            data: {outfits:JSON.stringify(dodo), category:cat},
+            url: 'createOutfit.php',
+            data: {outfits:JSON.stringify(dodo), category:cat, image: img},
             success: function ( data ,status) {
-                // window.location.reload();
+                console.log(data);
+                window.location.replace("homepage.php");
+                //$.post("outfit.php",{outfit:data});
             },
             error: function ( xhr, desc, err) {
-                // console.log("Details: " + desc + "\nError:" + err);
+                console.log("Details: " + desc + "\nError:" + err);
             }
         });
     }

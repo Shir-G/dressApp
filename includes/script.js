@@ -43,7 +43,7 @@ $(document).ready(function(){
         
     });
 
-    $('.loadBtn').click(function(event){
+    /*$('.loadBtn').click(function(event){
         event.preventDefault();
         var btnValue = $(this).val();
         var id = $(this).attr('id');
@@ -60,7 +60,7 @@ $(document).ready(function(){
                 console.log("Details: " + desc + "\nError:" + err);
             }
         });
-    });
+    });*/
 
     //for matchingOutfit page and also for likedOutfits page
     $('.outfit').click(function(event) {

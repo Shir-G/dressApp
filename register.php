@@ -12,14 +12,14 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
-        $email = $_POST['email'];
-        $permissions = $_POST['account_permissions'];
+        $email = strtolower($_POST['email']);
+        //$permissions = "stylist";
         $hash = md5( rand(0,1000) );
 
         if($password==$confirm_password){ //if the password 'field' and the 'confirm password' field match
             $password = password_hash($password,PASSWORD_BCRYPT); //encrypt password before saving it to the DB
 
-            $query = "INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `my_closet`, `liked_outfits`, `account_permissions`, `hash`) VALUES ('', '$username', '$email', '$password', NULL, NULL, '$permissions', '$hash')";
+            $query = "INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `my_closet`, `liked_outfits`, `account_permissions`, `hash`) VALUES ('', '$username', '$email', '$password', NULL, NULL, 'stylist', '$hash')";
             
             $retval = mysql_query( $query, $conn );
             $insertId = mysql_insert_id();              
@@ -60,11 +60,14 @@
                                          
                     $headers = 'From:noreply@DressApp.com' . "\r\n"; // Set from headers
                     mail($to, $subject, $message, $headers); // Send our email
+
+                    $_SESSION['user_id'] = $row['user_id']; //save user info for the session
+                    $_SESSION['register'] = "true";
+                    header("Location: homepage.php");
                 }
                 else {
                     $msg = 'Go to your inbox and verify your account <br>';
-                    // $_SESSION['user_id'] = $row['user_id']; //save user info for the session
-                    // header("Location: homepage.php");
+
                 }
             }
         }
@@ -76,33 +79,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>register</title>
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="includes/style.css">
 </head>
-<body>
+<body id="register_page">
     <?php if (!empty($msg)) { ?>
         <p> <?= $msg ?></p>
     <?php } ?>
-    <form action="register.php" method="post">
-        get account as a:<br>
-        <table>
-            <tr>
-                <td><input type="radio" name="account_permissions" value="user" checked>user</input></td>
-                <td><input type="radio" name="account_permissions" value="stylist">stylist</input></td>
-            </tr>
-            <tr>
-              <td>Email</td><td><input type="email" name="email" required></input>  </td>
-            </tr>
-            <tr>
-                <td>User Name</td><td><input type="text" name="username" required></input></td>
-            </tr>
-            <tr>
-                <td>Password</td><td><input type="password" name="password"></input></td>
-            </tr>
-            <tr>
-                <td>Confirm Password</td><td><input type="password" name="confirm_password" required></input></td>
-            </tr>
-        </table>
-        <input type="submit" name="submit" value="submit"></input>
-    </form>
+    <header>
+        <a href="homepage.php"><h1>DressApp</h1></a>
+    </header>
+    <main>
+        <form action="register.php" method="post">
+            <input type="email" name="email" required placeholder="Email"></input>
+            <input type="text" name="username" required placeholder="User Name"></input>
+            <input type="password" name="password" placeholder="Password"></input>
+            <input type="password" name="confirm_password" required placeholder="Confirm Password"></input>
+            <input type="submit" name="submit" value="submit"></input>
+        </form>
+    </main>
+    
 </body>
 </html>

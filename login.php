@@ -10,7 +10,7 @@
 
     //get values from login.php form
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
-        $email = $_POST['email'];
+        $email = strtolower($_POST['email']);
         $password = $_POST['password'];
         //echo "$email";
 
@@ -25,55 +25,64 @@
         //get the user info from the DB
         $query = "SELECT * FROM users WHERE email = '$email' ";
         $result = mysql_query($query) or die("failed to login" .mysql_error());
-        $row = mysql_fetch_array($result);
+        if (mysql_num_rows($result) > 0) {
+            $row = mysql_fetch_array($result);
 
-        if ($row['active'] == 0) {
-            $msg = "Please check your email to activate your account";
-        }
-        else{
-            if ($row['email'] == $email) { //if user is found
-                if (password_verify($password, $row['password'])) { //verify if password was entered correctly
-                    $msg = "welcome ".$row['username'];
+            if ($row['active'] == 0) {
+                $msg = "Please check your email to activate your account";
+            }
+            else{
+                if ($row['email'] == $email) { //if user is found
+                    if (!password_verify($password, $row['password'])) { //verify if password was entered correctly
+                        $msg = "password incorrect";
+                        $login=false;
+                    }
                 }
                 else {
-                    echo "password incorrect";
+                    $msg = "email incorrect";
                     $login=false;
                 }
             }
-            else {
-                echo "email incorrect";
-                $login=false;
-            }
+        }
+        else {
+            $login = false;
+            $msg = "Sorry, these credentials don't match";
         }
 
         if ($login) { //if credentials are right
             $_SESSION['user_id'] = $row['user_id'];
             header("Location: homepage.php"); //redirect to hompage
         }
-        else $msg = "Sorry, those credentials don't match";
-        }
+    }
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>login</title>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="includes/style.css">
 </head>
-<body>
-    <?php if (!empty($msg)) { ?>
-        <p> <?= $msg ?></p>
-    <?php } ?>
-    <form action="login.php" method="post">
-    <table>
-        <tr>
-            <td>Email</td><td><input type="email" name="email" required></input></td>
-        </tr>
-        <tr>
-            <td>Password</td><td><input type="password" name="password"></input></td>
-        </tr>
-    </table>
-        <input type="submit" name="submit" value="submit"></input>
-    </form>
+<body id="login_page">
+    <header>
+        <a href="homepage.php"><h1>DressApp</h1></a>
+    </header>
+    <main>
+        <form action="login.php" method="post">
+            <input type="email" name="email"  placeholder="Email" required></input>
+            <input type="password" name="password" placeholder="Password"></input>
+            
+            <input type="submit" name="submit" value="submit"></input>
+        </form>      
+        <a href="register.php">Don't have an account yet? Register here</a>
+        <?php if (!empty($msg)) { ?>
+            <p> <?= $msg ?></p>
+        <?php } ?>      
+    </main>
+
+
+    
 </body>
 </html>
